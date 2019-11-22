@@ -21,11 +21,11 @@ export class Controller extends PIXI.Container {
     this.vol = 1;
     this.sound = 0;
 
-    eventEmitter.on(EVENTS.NEW_GAME_CONTROLLER, this.newGame);
+    eventEmitter.on(EVENTS.NEW_GAME_CONTROLLER, this.newGame, this);
   }
 
   newGame() {
-    eventEmitter.on(EVENTS.NEW_GAME_VIEW, {});
+    eventEmitter.on(EVENTS.NEW_GAME_VIEW, {}, this);
   }
 
   init() {

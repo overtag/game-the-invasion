@@ -22,7 +22,6 @@ export class Lobby extends PIXI.Container {
     };
 
     this.visible = false;
-    eventEmitter.on(EVENTS.SET_SCREEN, this.setScreen, this);
   }
 
   show() {

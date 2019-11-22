@@ -19,7 +19,7 @@ export class Game extends PIXI.Container {
     PIXI.ticker.Ticker.FPS = 60;
     this.tiker.stop();
 
-    eventEmitter.on(EVENTS.NEW_GAME_VIEW, this.newGame);
+    eventEmitter.on(EVENTS.NEW_GAME_VIEW, this.newGame, this);
   }
 
   newGame() {}
