@@ -30,12 +30,12 @@ export class Core extends PIXI.Container {
 
     switch (evt.state) {
       case 1:
-        this.game.hide();
-        this.lobby.show();
-        break;
-      case 2:
         this.game.show();
         this.lobby.hide();
+        break;
+      case 2:
+        this.game.hide();
+        this.lobby.show();
         break;
     }
   }

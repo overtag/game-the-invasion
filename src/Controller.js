@@ -20,6 +20,12 @@ export class Controller extends PIXI.Container {
     this.currentLevel = 0;
     this.vol = 1;
     this.sound = 0;
+
+    eventEmitter.on(EVENTS.NEW_GAME_CONTROLLER, this.newGame);
+  }
+
+  newGame() {
+    eventEmitter.on(EVENTS.NEW_GAME_VIEW, {});
   }
 
   init() {

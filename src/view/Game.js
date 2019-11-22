@@ -13,6 +13,23 @@ export class Game extends PIXI.Container {
     this.addChild(bg);
 
     this.visible = false;
-    eventEmitter.on(EVENTS.SET_SCREEN, this.setScreen, this);
+
+    this.tiker = new PIXI.ticker.Ticker();
+    this.tiker.add(this.enterFrame.bind(this));
+    PIXI.ticker.Ticker.FPS = 60;
+    this.tiker.stop();
+
+    eventEmitter.on(EVENTS.NEW_GAME_VIEW, this.newGame);
+  }
+
+  newGame() {}
+  enterFrame(evt) {}
+
+  show() {
+    this.visible = true;
+  }
+
+  hide() {
+    this.visible = false;
   }
 }
