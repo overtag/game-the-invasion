@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js';
 import * as filters from 'pixi-filters';
 import { config } from './config.js';
 import { Core } from './view/Core.js';
+import { Controller } from './Controller';
 
 export class App {
   constructor() {
@@ -41,15 +42,13 @@ export class App {
     this.viewWidth = 1;
     this.viewHeight = 1;
 
-    this.core = new PIXI.Container();
+    if (!this.core) this.core = new Core();
+    if (!this.controller) this.controller = new Controller();
+
     this.core.visible = true;
     this.app.stage.addChild(this.core);
-
-    this.resize();
-    /*window.addEventListener('resize', this.resize.bind(this));
-    if (window.DeviceOrientationEvent) {
-      window.addEventListener('deviceorientation', this.resize.bind(this));
-    };*/
+    console.log('TYT');
+    this.controller.init();
   }
 
   update() {
