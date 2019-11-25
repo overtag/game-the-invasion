@@ -15,13 +15,14 @@ export class Controller extends PIXI.Container {
     this.health = 3;
 
     eventEmitter.on(EVENTS.NEW_GAME_CONTROLLER, this.newGame, this);
-    eventEmitter.on(EVENTS.ADD_TRAP, this.addTrap, this);
+    eventEmitter.on(EVENTS.PAY_TRAP, this.payTrap, this);
   }
 
-  addTrap(evt) {
-    console.log('ADD_TRAP', evt);
+  payTrap(evt) {
+    console.log('PAY_TRAP', evt);
     this.gold -= evt.type;
 
+    eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
     eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
 
     console.log('evt.type', evt.type);

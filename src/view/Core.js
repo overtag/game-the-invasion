@@ -4,6 +4,7 @@ import { eventEmitter, EVENTS } from '../events/EventEmitter';
 
 import { Lobby } from './Lobby';
 import { Game } from './Game';
+import { TrapScreen } from './TrapScreen';
 
 export class Core extends PIXI.Container {
   constructor() {
@@ -23,6 +24,9 @@ export class Core extends PIXI.Container {
     this.lobby = new Lobby();
     this.addChild(this.lobby);
 
+    this.trapScreen = new TrapScreen();
+    this.addChild(this.trapScreen);
+
     eventEmitter.on(EVENTS.SET_STATE, this.setScreen, this);
   }
 
@@ -33,10 +37,12 @@ export class Core extends PIXI.Container {
       case config.STATE_SCREEN_GAME:
         this.game.show();
         this.lobby.hide();
+        this.trapScreen.show();
         break;
       case config.STATE_SCREEN_LOBBY:
         this.game.hide();
         this.lobby.show();
+        this.trapScreen.hide();
         break;
     }
   }
