@@ -2,15 +2,6 @@ import * as PIXI from 'pixi.js';
 
 import { config } from './config.js';
 import { EVENTS, eventEmitter } from './events/EventEmitter.js';
-import { EventEmitter } from 'events';
-
-const STATE_GAME = 1;
-const STATE_LOBBY = 2;
-const STATE_PAUSE = 3;
-
-const STATE_START_GAME = 4;
-const STATE_GAME_OVER = 5;
-const STATE_YOU_WIN = 6;
 
 export class Controller extends PIXI.Container {
   constructor() {
@@ -25,10 +16,14 @@ export class Controller extends PIXI.Container {
   }
 
   newGame() {
-    eventEmitter.on(EVENTS.NEW_GAME_VIEW, {}, this);
+    const data = {
+      state: config.STATE_SCREEN_GAME,
+    };
+
+    eventEmitter.emit(EVENTS.SET_STATE, { state: config.STATE_SCREEN_GAME });
   }
 
   init() {
-    eventEmitter.emit(EVENTS.SET_SCREEN, { state: STATE_LOBBY });
+    eventEmitter.emit(EVENTS.SET_STATE, { state: config.STATE_SCREEN_LOBBY });
   }
 }

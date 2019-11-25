@@ -20,4 +20,11 @@ export const config = {
     wordWrap: true,
     wordWrapWidth: 400,
   },
+
+  STATE_SCREEN_GAME: 1,
+  STATE_SCREEN_LOBBY: 2,
+  STATE_SCREEN_PAUSE: 3,
+  STATE_SCREEN_START_GAME: 4,
+  STATE_SCREEN_START_GAME: 5,
+  STATE_SCREEN_YOU_WIN: 6,
 };

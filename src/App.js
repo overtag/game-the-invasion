@@ -47,8 +47,10 @@ export class App {
 
     this.core.visible = true;
     this.app.stage.addChild(this.core);
-    console.log('TYT');
+
     this.controller.init();
+
+    this.resize();
   }
 
   update() {

@@ -16,24 +16,25 @@ export class Core extends PIXI.Container {
     this.addChild(bg);
 
     this.visible = false;
-    eventEmitter.on(EVENTS.SET_SCREEN, this.setScreen, this);
 
     this.game = new Game();
     this.addChild(this.game);
 
     this.lobby = new Lobby();
     this.addChild(this.lobby);
+
+    eventEmitter.on(EVENTS.SET_STATE, this.setScreen, this);
   }
 
   setScreen(evt) {
     this.visible = true;
 
     switch (evt.state) {
-      case 1:
+      case config.STATE_SCREEN_GAME:
         this.game.show();
         this.lobby.hide();
         break;
-      case 2:
+      case config.STATE_SCREEN_LOBBY:
         this.game.hide();
         this.lobby.show();
         break;

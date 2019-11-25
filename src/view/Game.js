@@ -7,7 +7,7 @@ export class Game extends PIXI.Container {
     super();
 
     const bg = new PIXI.Graphics();
-    bg.beginFill(0x235a3b);
+    bg.beginFill(0xffcc00);
     bg.drawRect(0, 0, config.defaultWidth, config.defaultHeight);
     bg.endFill();
     this.addChild(bg);
@@ -23,6 +23,7 @@ export class Game extends PIXI.Container {
   }
 
   newGame() {}
+
   enterFrame(evt) {}
 
   show() {
