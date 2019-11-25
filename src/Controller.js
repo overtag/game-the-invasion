@@ -11,8 +11,20 @@ export class Controller extends PIXI.Container {
     this.currentLevel = 0;
     this.vol = 1;
     this.sound = 0;
+    this.gold = 10;
+    this.health = 3;
 
     eventEmitter.on(EVENTS.NEW_GAME_CONTROLLER, this.newGame, this);
+    eventEmitter.on(EVENTS.ADD_TRAP, this.addTrap, this);
+  }
+
+  addTrap(evt) {
+    console.log('ADD_TRAP', evt);
+    this.gold -= evt.type;
+
+    eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
+
+    console.log('evt.type', evt.type);
   }
 
   newGame() {
@@ -20,7 +32,8 @@ export class Controller extends PIXI.Container {
       state: config.STATE_SCREEN_GAME,
     };
 
-    eventEmitter.emit(EVENTS.SET_STATE, { state: config.STATE_SCREEN_GAME });
+    eventEmitter.emit(EVENTS.SET_STATE, data);
+    eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
   }
 
   init() {

@@ -26,7 +26,6 @@ export class Button extends PIXI.Container {
     this.mouseup = this.mouseup.bind(this);
     this.mouseupoutside = this.mouseupoutside.bind(this);
     this.mouseout = this.mouseout.bind(this);
-    this.touchend = this.defaultClick.bind(this);
   }
 
   onclick() {

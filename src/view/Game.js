@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
+import { BottomPanel } from './BottomPanel';
 
 export class Game extends PIXI.Container {
   constructor() {
@@ -12,6 +13,9 @@ export class Game extends PIXI.Container {
     bg.endFill();
     this.addChild(bg);
 
+    this.bottomPanel = new BottomPanel();
+    this.bottomPanel.position.set(0, config.defaultHeight - this.bottomPanel.height);
+    this.addChild(this.bottomPanel);
     this.visible = false;
 
     this.tiker = new PIXI.ticker.Ticker();
