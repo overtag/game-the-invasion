@@ -27,7 +27,7 @@ export class BottomPanel extends PIXI.Container {
     const trapTexture = this.createRectangleButton().generateCanvasTexture();
     const oneTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
     oneTrapBtn.onclick = () => {
-      this.payTrap(config.TYPE_RAKE);
+      this.payTrap(config.TRAP_RAKE);
     };
 
     oneTrapBtn.position.set(50, 35);

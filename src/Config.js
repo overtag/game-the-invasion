@@ -28,7 +28,7 @@ export const config = {
   STATE_SCREEN_START_GAME: 5,
   STATE_SCREEN_YOU_WIN: 6,
 
-  TYPE_RAKE: 3,
-  TYPE_SHEEP: 2,
-  TYPE_FENCE: 1,
+  TRAP_RAKE: 3,
+  TRAP_SHEEP: 2,
+  TRAP_FENCE: 1,
 };

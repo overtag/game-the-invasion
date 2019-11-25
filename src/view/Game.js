@@ -4,9 +4,16 @@ import { config } from '../config';
 import { BottomPanel } from './BottomPanel';
 import { BaseTrap } from './traps/BaseTrap';
 
+function update(obj) {
+  obj.update();
+}
+
 export class Game extends PIXI.Container {
   constructor() {
     super();
+
+    this.enemies = [];
+    this.traps = [];
 
     const bg = new PIXI.Graphics();
     bg.beginFill(0xffcc00);
@@ -39,19 +46,35 @@ export class Game extends PIXI.Container {
 
   createTrap(type) {
     switch (type) {
-      case config.TYPE_RAKE:
+      case config.TRAP_RAKE:
         return new BaseTrap();
 
-      case config.TYPE_SHEEP:
+      case config.TRAP_SHEEP:
         break;
-      case config.TYPE_FENCE:
+      case config.TRAP_FENCE:
+        break;
+    }
+  }
+
+  createEnemy(type) {
+    switch (type) {
+      case config.TRAP_RAKE:
+        return new BaseTrap();
+
+      case config.TRAP_SHEEP:
+        break;
+
+      case config.TRAP_FENCE:
         break;
     }
   }
 
   newGame() {}
 
-  enterFrame(evt) {}
+  enterFrame(evt) {
+    this.enemies.forEach(update);
+    this.traps.forEach(update);
+  }
 
   show() {
     this.visible = true;
