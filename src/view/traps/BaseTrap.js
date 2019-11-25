@@ -18,7 +18,7 @@ export class BaseTrap extends PIXI.Container {
 
   createRectangle() {
     const graphics = new PIXI.Graphics();
-    graphics.beginFill(0xffcc00);
+    graphics.beginFill(0xeeffcc);
     graphics.drawRect(0, 0, 80, 80);
     graphics.endFill();
 

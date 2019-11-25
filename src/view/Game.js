@@ -28,12 +28,12 @@ export class Game extends PIXI.Container {
     this.tiker.stop();
 
     eventEmitter.on(EVENTS.NEW_GAME_VIEW, this.newGame, this);
-    eventEmitter.om(EVENTS.ADD_TRAP, this.addTrap, this);
+    eventEmitter.on(EVENTS.ADD_TRAP, this.addTrap, this);
   }
 
   addTrap(evt) {
-    const trap = this.createTrap();
-    trap.init(evt.position);
+    const trap = this.createTrap(evt.type);
+    trap.init(evt.point);
     this.addChild(trap);
   }
 
@@ -41,7 +41,7 @@ export class Game extends PIXI.Container {
     switch (type) {
       case config.TYPE_RAKE:
         return new BaseTrap();
-        break;
+
       case config.TYPE_SHEEP:
         break;
       case config.TYPE_FENCE:
