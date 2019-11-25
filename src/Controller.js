@@ -23,7 +23,6 @@ export class Controller extends PIXI.Container {
     this.gold -= evt.type;
 
     eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
-    eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
 
     console.log('evt.type', evt.type);
   }
@@ -35,6 +34,7 @@ export class Controller extends PIXI.Container {
 
     eventEmitter.emit(EVENTS.SET_STATE, data);
     eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
+    eventEmitter.emit(EVENTS.UPDATE_HEALTH, { health: this.health });
   }
 
   init() {

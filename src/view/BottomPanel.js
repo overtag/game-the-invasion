@@ -20,6 +20,10 @@ export class BottomPanel extends PIXI.Container {
     this.coinsTf.position.set(500, 60);
     this.addChild(this.coinsTf);
 
+    this.healtTf = new PIXI.Text('0', config.panel_text);
+    this.healtTf.position.set(500, 20);
+    this.addChild(this.healtTf);
+
     const trapTexture = this.createRectangleButton().generateCanvasTexture();
     const oneTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
     oneTrapBtn.onclick = () => {
@@ -40,6 +44,11 @@ export class BottomPanel extends PIXI.Container {
     eventEmitter.on(EVENTS.UPDATE_GOLD, evt => {
       console.log('UPDATE_GOLD', evt);
       this.coinsTf.text = evt.gold;
+    });
+
+    eventEmitter.on(EVENTS.UPDATE_HEALTH, evt => {
+      console.log('UPDATE_GOLD', evt);
+      this.healtTf.text = evt.health;
     });
   }
 
