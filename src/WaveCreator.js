@@ -1,22 +1,23 @@
 import * as PIXI from 'pixi.js';
+import { config } from './config';
+import { EVENTS, eventEmitter } from './events/EventEmitter';
 
 const level = [
   {
-    types: ['Patch_mc', 'Patch_mc'],
+    types: ['base'],
     count: 6,
     interval: 120,
   },
   {
-    types: ['Patch_mc'],
+    types: ['base'],
     count: 6,
     interval: 120,
   },
 ];
 
 export class WaveCreator {
-  constructor(universe) {
+  constructor() {
     this.wave = null;
-
     this.isPlay = false;
     this.ticks = 0;
   }

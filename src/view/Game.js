@@ -3,6 +3,7 @@ import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
 import { BottomPanel } from './BottomPanel';
 import { BaseTrap } from './traps/BaseTrap';
+import { EnemyController } from './EnemyController';
 
 function update(obj) {
   obj.update();
@@ -12,7 +13,8 @@ export class Game extends PIXI.Container {
   constructor() {
     super();
 
-    this.enemies = [];
+    this.enemyController = new EnemyController(this);
+
     this.traps = [];
 
     const bg = new PIXI.Graphics();
@@ -29,13 +31,9 @@ export class Game extends PIXI.Container {
     this.addChild(this.bottomPanel);
     this.visible = false;
 
-    this.tiker = new PIXI.ticker.Ticker();
-    this.tiker.add(this.enterFrame.bind(this));
-    PIXI.ticker.Ticker.FPS = 60;
-    this.tiker.stop();
-
     eventEmitter.on(EVENTS.NEW_GAME_VIEW, this.newGame, this);
     eventEmitter.on(EVENTS.ADD_TRAP, this.addTrap, this);
+    eventEmitter.on(EVENTS.UPDATE, this.enterFrame, this);
   }
 
   addTrap(evt) {
@@ -69,10 +67,12 @@ export class Game extends PIXI.Container {
     }
   }
 
-  newGame() {}
+  newGame() {
+    this.enemyController.play();
+  }
 
   enterFrame(evt) {
-    this.enemies.forEach(update);
+    this.enemyController.update();
     this.traps.forEach(update);
   }
 

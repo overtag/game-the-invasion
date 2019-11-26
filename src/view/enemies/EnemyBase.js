@@ -1,8 +1,6 @@
 import * as PIXI from 'pixi.js';
-import { config } from '../config';
-import { Names } from './Names';
-import { eventEmitter, EVENTS } from '../events/EventEmitter';
-import { HealthBar } from '../health/HealthBar';
+import { config } from '../../config';
+import { eventEmitter, EVENTS } from '../../events/EventEmitter';
 
 export class EnemyBase extends PIXI.Container {
   constructor() {
@@ -14,6 +12,8 @@ export class EnemyBase extends PIXI.Container {
 
     this.health = 1;
     this.sprite = null;
+
+    this.speed = 1;
   }
 
   createRectangleButton() {
@@ -23,5 +23,18 @@ export class EnemyBase extends PIXI.Container {
     graphics.endFill();
 
     return graphics;
+  }
+
+  update() {
+    this.y += this.speed;
+
+    if (this.y > config.ENEMY_MAX_Y) {
+      eventEmitter.emit(EVENTS.ENEMY_HAS_COME, {});
+      this.death();
+    }
+  }
+
+  death() {
+    eventEmitter.emit(EVENTS.ENEMY_DEATH, { enemy: this });
   }
 }

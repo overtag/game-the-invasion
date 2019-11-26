@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js';
 
 import { config } from './config.js';
 import { EVENTS, eventEmitter } from './events/EventEmitter.js';
+import { WaveCreator } from './WaveCreator.js';
 
 export class Controller extends PIXI.Container {
   constructor() {
@@ -14,30 +15,58 @@ export class Controller extends PIXI.Container {
     this.gold = 10;
     this.health = 3;
 
+    this.tiker = new PIXI.ticker.Ticker();
+    this.tiker.add(this.enterFrame.bind(this));
+    PIXI.ticker.Ticker.FPS = 60;
+    this.tiker.stop();
+
+    this.waveCreator = new WaveCreator();
+
     eventEmitter.on(EVENTS.NEW_GAME_CONTROLLER, this.newGame, this);
     eventEmitter.on(EVENTS.PAY_TRAP, this.payTrap, this);
+    eventEmitter.on(EVENTS.ENEMY_HAS_COME, this.enemyHasCome);
+  }
+
+  enemyHasCome() {
+    this.health -= 1;
+
+    if (this.health < 0) {
+      eventEmitter.emit(EVENTS.SET_SCREEN, {
+        state: config.STATE_SCREEN_GAME_OVER,
+      });
+      this.tiker.stop();
+    }
   }
 
   payTrap(evt) {
-    console.log('PAY_TRAP', evt);
     this.gold -= evt.type;
-
     eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
-
-    console.log('evt.type', evt.type);
   }
 
   newGame() {
     const data = {
       state: config.STATE_SCREEN_GAME,
+      level: 1,
     };
 
-    eventEmitter.emit(EVENTS.SET_STATE, data);
+    this.tiker.start();
+    this.waveCreator.play();
+
+    eventEmitter.emit(EVENTS.SET_SCREEN, data);
     eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
     eventEmitter.emit(EVENTS.UPDATE_HEALTH, { health: this.health });
   }
 
   init() {
-    eventEmitter.emit(EVENTS.SET_STATE, { state: config.STATE_SCREEN_LOBBY });
+    eventEmitter.emit(EVENTS.SET_SCREEN, {
+      state: config.STATE_SCREEN_GAME_OVER,
+    });
+  }
+
+  enterFrame(evt) {
+    if ((this.state = config.STATE_SCREEN_GAME)) {
+      this.waveCreator.update();
+      eventEmitter.emit(EVENTS.UPDATE, {});
+    }
   }
 }
