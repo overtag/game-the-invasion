@@ -2,7 +2,6 @@ import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
 import { EnemyBase } from './enemies/EnemyBase';
-import { WaveCreator } from '../WaveCreator';
 
 function update(obj) {
   obj.update();
@@ -27,19 +26,19 @@ export class EnemyController {
 
     this.enemies = [];
 
-    eventEmitter.on(EVENTS.CREATE_ENEMY, this.addEnemy, this);
-    eventEmitter.on(EVENTS.ENEMY_DEATH, this.removeEnemy, this);
+    eventEmitter.on(EVENTS.CREATE_ENEMY, this.add, this);
+    eventEmitter.on(EVENTS.ENEMY_DEATH, this.remove, this);
     eventEmitter.on(EVENTS.CLEAN_GAME, this.cleanGame, this);
   }
 
   cleanGame() {
     this.enemies.forEach(enemy => {
-      enemy.remove();
       this.universe.removeChild(enemy);
     });
+    this.enemies = [];
   }
 
-  removeEnemy(evt) {
+  remove(evt) {
     const { enemy } = evt;
     const index = this.enemies.findIndex(curr => curr === enemy);
     this.enemies.splice(index, 1);
@@ -47,7 +46,7 @@ export class EnemyController {
     this.universe.removeChild(enemy);
   }
 
-  addEnemy(evt) {
+  add(evt) {
     const enemy = this.createEnemy(evt.type);
     const startX = Math.random() * (config.defaultWidth - enemy.width);
     enemy.position.set(startX, 0);

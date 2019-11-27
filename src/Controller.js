@@ -13,7 +13,7 @@ export class Controller extends PIXI.Container {
     this.vol = 1;
     this.sound = 0;
     this.gold = 10;
-    this.health = 3;
+    this.health = 1;
 
     this.tiker = new PIXI.ticker.Ticker();
     this.tiker.add(this.enterFrame.bind(this));
@@ -28,7 +28,7 @@ export class Controller extends PIXI.Container {
   }
 
   defaultSettings() {
-    this.health = 3;
+    this.health = 1;
     this.glod = 10;
   }
 
@@ -50,6 +50,7 @@ export class Controller extends PIXI.Container {
   }
 
   newGame() {
+    eventEmitter.emit(EVENTS.CLEAN_GAME, {});
     this.defaultSettings();
     const data = {
       state: config.STATE_SCREEN_GAME,
@@ -59,7 +60,6 @@ export class Controller extends PIXI.Container {
     this.tiker.start();
     this.waveCreator.play();
 
-    eventEmitter.emit(EVENTS.CLEAN_GAME, {});
     eventEmitter.emit(EVENTS.SET_SCREEN, data);
     eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
     eventEmitter.emit(EVENTS.UPDATE_HEALTH, { health: this.health });

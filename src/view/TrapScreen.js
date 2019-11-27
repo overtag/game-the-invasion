@@ -7,8 +7,23 @@ export class TrapScreen extends PIXI.Container {
     super();
     this.isDrag = false;
     this.currentType = -1;
-
+    this.targetSprite = new PIXI.Sprite(
+      this.createRectangle().generateCanvasTexture(),
+    );
     eventEmitter.on(EVENTS.PAY_TRAP, this.startDrag, this);
+    eventEmitter.on(EVENTS.CLEAN_GAME, this.cleanGame, this);
+  }
+
+  cleanGame() {
+    this.isDrag = false;
+    this.targetSprite.visible = false;
+  }
+
+  add(evt) {
+    const trap = this.createTrap(evt.type);
+    this.traps.push(trap);
+    trap.init(evt.point);
+    this.universe.addChild(trap);
   }
 
   createRectangle() {

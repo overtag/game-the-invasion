@@ -13,7 +13,7 @@ export class EnemyBase extends PIXI.Container {
     this.health = 1;
     this.sprite = null;
 
-    this.speed = 5;
+    this.speed = 10;
   }
 
   createRectangleButton() {
