@@ -40,7 +40,7 @@ export class Game extends PIXI.Container {
 
   enterFrame(evt) {
     this.enemyController.update();
-    this.trapController.update();
+    this.trapController.update(this.enemyController.enemies);
   }
 
   show() {

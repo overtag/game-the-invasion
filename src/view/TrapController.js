@@ -47,8 +47,10 @@ export class TrapController {
     }
   }
 
-  update(evt) {
-    this.traps.forEach(update);
+  update(enemies) {
+    this.traps.forEach(curr => {
+      curr.update(enemies);
+    });
   }
 
   cleanGame() {

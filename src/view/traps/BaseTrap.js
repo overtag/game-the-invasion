@@ -1,6 +1,7 @@
 import * as PIXI from 'pixi.js';
 import { config } from '../../config';
 import { eventEmitter, EVENTS } from '../../events/EventEmitter';
+import { Amath } from '../../utils/Amath';
 
 export class BaseTrap extends PIXI.Container {
   constructor() {
@@ -25,7 +26,20 @@ export class BaseTrap extends PIXI.Container {
     return graphics;
   }
 
-  update() {}
+  update(enemies) {
+    enemies.forEach(enemy => {
+      this.collision(enemy, this);
+    });
+  }
+
+  collision(enemy) {
+    if (Amath.hitTestRectangle(this, enemy)) {
+      enemy.damage(1);
+      this.remove();
+    } else {
+      // console.log('----');
+    }
+  }
 
   remove() {
     eventEmitter.emit(EVENTS.REMOVE_TRAP, { trap: this });

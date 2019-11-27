@@ -25,6 +25,13 @@ export class EnemyBase extends PIXI.Container {
     return graphics;
   }
 
+  damage(value) {
+    this.health -= value;
+    if (this.health <= 0) {
+      this.remove();
+    }
+  }
+
   update() {
     this.y += this.speed;
 
