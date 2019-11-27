@@ -17,11 +17,28 @@ export class GameOverScreen extends PIXI.Container {
     bg.endFill();
     this.addChild(bg);
     const grT = this.createRectangleButton().generateCanvasTexture();
-    this.btnNewGame = new Button(grT, grT, grT);
-    this.addChild(this.btnNewGame);
-    this.btnNewGame.position.set(10, 300);
-    this.btnNewGame.onclick = () => {
+
+    this.restartBtn = new Button(grT, grT, grT);
+    this.addChild(this.restartBtn);
+    this.restartBtn.position.set(
+      config.defaultWidth * 0.5 - this.restartBtn.width * 0.5,
+      300,
+    );
+    this.restartBtn.onclick = () => {
       eventEmitter.emit(EVENTS.NEW_GAME_CONTROLLER);
+    };
+
+    this.lobbyBtn = new Button(grT, grT, grT);
+    this.addChild(this.lobbyBtn);
+    this.lobbyBtn.position.set(
+      config.defaultWidth * 0.5 - this.lobbyBtn.width * 0.5,
+      400,
+    );
+
+    this.lobbyBtn.onclick = () => {
+      eventEmitter.emit(EVENTS.SET_SCREEN, {
+        state: config.STATE_SCREEN_LOBBY,
+      });
     };
 
     this.visible = false;

@@ -29,6 +29,14 @@ export class EnemyController {
 
     eventEmitter.on(EVENTS.CREATE_ENEMY, this.addEnemy, this);
     eventEmitter.on(EVENTS.ENEMY_DEATH, this.removeEnemy, this);
+    eventEmitter.on(EVENTS.CLEAN_GAME, this.cleanGame, this);
+  }
+
+  cleanGame() {
+    this.enemies.forEach(enemy => {
+      enemy.remove();
+      this.universe.removeChild(enemy);
+    });
   }
 
   removeEnemy(evt) {

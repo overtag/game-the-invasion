@@ -23,8 +23,9 @@ export class WaveCreator {
   }
 
   play() {
+    console.log('PLAY');
     this.isPlay = true;
-    this.newWave(level);
+    this.newWave([...level]);
   }
 
   stop() {

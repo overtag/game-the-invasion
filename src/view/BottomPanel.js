@@ -47,7 +47,7 @@ export class BottomPanel extends PIXI.Container {
     });
 
     eventEmitter.on(EVENTS.UPDATE_HEALTH, evt => {
-      console.log('UPDATE_GOLD', evt);
+      console.log('UPDATE_HEALTH', evt);
       this.healtTf.text = evt.health;
     });
   }

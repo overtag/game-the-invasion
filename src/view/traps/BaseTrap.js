@@ -24,4 +24,8 @@ export class BaseTrap extends PIXI.Container {
 
     return graphics;
   }
+
+  remove() {
+    eventEmitter.emit(EVENTS.REMOVE_TRAP, { trap: this });
+  }
 }

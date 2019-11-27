@@ -13,7 +13,7 @@ export class EnemyBase extends PIXI.Container {
     this.health = 1;
     this.sprite = null;
 
-    this.speed = 1;
+    this.speed = 5;
   }
 
   createRectangleButton() {
@@ -30,11 +30,11 @@ export class EnemyBase extends PIXI.Container {
 
     if (this.y > config.ENEMY_MAX_Y) {
       eventEmitter.emit(EVENTS.ENEMY_HAS_COME, {});
-      this.death();
+      this.remove();
     }
   }
 
-  death() {
+  remove() {
     eventEmitter.emit(EVENTS.ENEMY_DEATH, { enemy: this });
   }
 }

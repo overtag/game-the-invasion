@@ -24,7 +24,12 @@ export class Controller extends PIXI.Container {
 
     eventEmitter.on(EVENTS.NEW_GAME_CONTROLLER, this.newGame, this);
     eventEmitter.on(EVENTS.PAY_TRAP, this.payTrap, this);
-    eventEmitter.on(EVENTS.ENEMY_HAS_COME, this.enemyHasCome);
+    eventEmitter.on(EVENTS.ENEMY_HAS_COME, this.enemyHasCome, this);
+  }
+
+  defaultSettings() {
+    this.health = 3;
+    this.glod = 10;
   }
 
   enemyHasCome() {
@@ -36,6 +41,7 @@ export class Controller extends PIXI.Container {
       });
       this.tiker.stop();
     }
+    eventEmitter.emit(EVENTS.UPDATE_HEALTH, { health: this.health });
   }
 
   payTrap(evt) {
@@ -44,6 +50,7 @@ export class Controller extends PIXI.Container {
   }
 
   newGame() {
+    this.defaultSettings();
     const data = {
       state: config.STATE_SCREEN_GAME,
       level: 1,
@@ -52,6 +59,7 @@ export class Controller extends PIXI.Container {
     this.tiker.start();
     this.waveCreator.play();
 
+    eventEmitter.emit(EVENTS.CLEAN_GAME, {});
     eventEmitter.emit(EVENTS.SET_SCREEN, data);
     eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
     eventEmitter.emit(EVENTS.UPDATE_HEALTH, { health: this.health });
@@ -59,7 +67,7 @@ export class Controller extends PIXI.Container {
 
   init() {
     eventEmitter.emit(EVENTS.SET_SCREEN, {
-      state: config.STATE_SCREEN_GAME_OVER,
+      state: config.STATE_SCREEN_LOBBY,
     });
   }
 

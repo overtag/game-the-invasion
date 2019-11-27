@@ -34,6 +34,14 @@ export class Game extends PIXI.Container {
     eventEmitter.on(EVENTS.NEW_GAME_VIEW, this.newGame, this);
     eventEmitter.on(EVENTS.ADD_TRAP, this.addTrap, this);
     eventEmitter.on(EVENTS.UPDATE, this.enterFrame, this);
+    eventEmitter.on(EVENTS.CLEAN_GAME, this.cleanGame, this);
+  }
+
+  cleanGame() {
+    this.traps.forEach(trap => {
+      trap.remove();
+      this.removeChild(trap);
+    });
   }
 
   addTrap(evt) {
