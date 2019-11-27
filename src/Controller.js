@@ -25,6 +25,14 @@ export class Controller extends PIXI.Container {
     eventEmitter.on(EVENTS.NEW_GAME_CONTROLLER, this.newGame, this);
     eventEmitter.on(EVENTS.PAY_TRAP, this.payTrap, this);
     eventEmitter.on(EVENTS.ENEMY_HAS_COME, this.enemyHasCome, this);
+    eventEmitter.on(EVENTS.LEVEL_COMPLETE, this.levelComplete, this);
+  }
+
+  levelComplete() {
+    eventEmitter.emit(EVENTS.SET_SCREEN, {
+      state: config.STATE_SCREEN_WIN,
+    });
+    this.tiker.stop();
   }
 
   defaultSettings() {

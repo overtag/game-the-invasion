@@ -36,7 +36,7 @@ export class WaveCreator {
     if (currLevel.length >= 0) {
       this.wave = currLevel.shift();
     } else {
-      // end level
+      eventEmitter.emit(EVENTS.LEVEL_COMPLETE, {});
     }
   }
 
