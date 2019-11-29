@@ -75,9 +75,15 @@ export class TrapScreen extends PIXI.Container {
   endDrag() {
     this.isDrag = false;
     this.targetSprite.visible = false;
+
+    const pointY =
+      this.targetSprite.y > config.defaultHeight - 150 - 80
+        ? config.defaultHeight - 150 - 80
+        : this.targetSprite.y;
+
     eventEmitter.emit(EVENTS.ADD_TRAP, {
       type: this.currentType,
-      point: { x: this.targetSprite.x, y: this.targetSprite.y },
+      point: { x: this.targetSprite.x, y: pointY },
     });
   }
 
