@@ -46,6 +46,9 @@ export class TrapScreen extends PIXI.Container {
     );
     // new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
     this.targetSprite.anchor.set(0.5, 0.5);
+
+    const point = this.toLocal(evt.point);
+    this.targetSprite.position.set(point.x, point.y);
     this.addChild(this.targetSprite);
     console.log('startDrag');
     this.isDrag = true;

@@ -12,7 +12,6 @@ export class TrapController {
     this.universe = universe;
 
     this.traps = [];
-
     eventEmitter.on(EVENTS.ADD_TRAP, this.add, this);
     eventEmitter.on(EVENTS.REMOVE_TRAP, this.remove, this);
     eventEmitter.on(EVENTS.CLEAN_GAME, this.cleanGame, this);
@@ -35,7 +34,6 @@ export class TrapController {
   }
 
   createTrap(type) {
-    console.log('TYPE', type);
     switch (type) {
       case config.TRAP_RAKE:
         return new BaseTrap();

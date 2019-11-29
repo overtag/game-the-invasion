@@ -26,8 +26,9 @@ export class BottomPanel extends PIXI.Container {
 
     const trapTexture = this.createRectangleButton().generateCanvasTexture();
     const oneTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
-    oneTrapBtn.onclick = () => {
-      this.payTrap(config.TRAP_RAKE);
+    oneTrapBtn.pointerdown = evt => {
+      console.log(evt);
+      this.payTrap(config.TRAP_RAKE, evt);
     };
 
     oneTrapBtn.position.set(50, 35);
@@ -61,14 +62,14 @@ export class BottomPanel extends PIXI.Container {
     return graphics;
   }
 
-  payTrap(type) {
+  payTrap(type, evt) {
     if (+this.coinsTf.text - type < 0) {
       console.log('Нужно больше золота');
       return;
     }
 
-    console.log('createTrap', type);
+    console.log('createTrap', type, evt);
 
-    eventEmitter.emit(EVENTS.PAY_TRAP, { type });
+    eventEmitter.emit(EVENTS.PAY_TRAP, { type, point: evt.data.global });
   }
 }
