@@ -17,7 +17,7 @@ export class Lobby extends PIXI.Container {
     this.btnNewGame = new Button(
       PIXI.Texture.fromImage('Game_btn0000'),
       PIXI.Texture.fromImage('Game_btn0001'),
-      PIXI.Texture.fromImage('Game_btn0002'),
+      PIXI.Texture.fromImage('Game_btn0001'),
     );
 
     this.btnNewGame.position.set(

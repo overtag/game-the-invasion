@@ -37,7 +37,7 @@ export class Controller extends PIXI.Container {
 
   defaultSettings() {
     this.health = 1;
-    this.glod = 10;
+    this.gold = 10;
   }
 
   enemyHasCome() {
@@ -75,7 +75,7 @@ export class Controller extends PIXI.Container {
 
   init() {
     eventEmitter.emit(EVENTS.SET_SCREEN, {
-      state: config.STATE_SCREEN_GAME_OVER,
+      state: config.STATE_SCREEN_LOBBY,
     });
   }
 

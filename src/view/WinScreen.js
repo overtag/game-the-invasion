@@ -29,7 +29,7 @@ export class WinScreen extends PIXI.Container {
     this.restartBtn = new Button(
       PIXI.Texture.fromImage('Replay_btn0000'),
       PIXI.Texture.fromImage('Replay_btn0001'),
-      PIXI.Texture.fromImage('Replay_btn0002'),
+      PIXI.Texture.fromImage('Replay_btn0001'),
     );
     this.addChild(this.restartBtn);
     this.restartBtn.position.set(
@@ -43,7 +43,7 @@ export class WinScreen extends PIXI.Container {
     this.lobbyBtn = new Button(
       PIXI.Texture.fromImage('Game_btn0000'),
       PIXI.Texture.fromImage('Game_btn0001'),
-      PIXI.Texture.fromImage('Game_btn0002'),
+      PIXI.Texture.fromImage('Game_btn0001'),
     );
     this.addChild(this.lobbyBtn);
     this.lobbyBtn.position.set(
