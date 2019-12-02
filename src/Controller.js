@@ -75,7 +75,7 @@ export class Controller extends PIXI.Container {
 
   init() {
     eventEmitter.emit(EVENTS.SET_SCREEN, {
-      state: config.STATE_SCREEN_LOBBY,
+      state: config.STATE_SCREEN_GAME_OVER,
     });
   }
 

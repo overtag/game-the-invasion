@@ -14,9 +14,19 @@ export class Lobby extends PIXI.Container {
     this.addChild(bg);
 
     const grT = this.createRectangleButton().generateCanvasTexture();
-    this.btnNewGame = new Button(grT, grT, grT);
+    this.btnNewGame = new Button(
+      PIXI.Texture.fromImage('Game_btn0000'),
+      PIXI.Texture.fromImage('Game_btn0001'),
+      PIXI.Texture.fromImage('Game_btn0002'),
+    );
+
+    this.btnNewGame.position.set(
+      config.defaultWidth * 0.5 - this.btnNewGame.width * 0.5,
+      400,
+    );
+
     this.addChild(this.btnNewGame);
-    this.btnNewGame.position.set(10, 10);
+
     this.btnNewGame.onclick = () => {
       eventEmitter.emit(EVENTS.NEW_GAME_CONTROLLER);
     };

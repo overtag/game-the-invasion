@@ -16,24 +16,33 @@ export class App {
     this.isSoundLoad = false;
 
     PIXI.Graphics.CURVES.adaptive = true;
-    config.isMobile = !!window.navigator.userAgent.match(/iPhone|Android|BlackBerry/i);
+    config.isMobile = !!window.navigator.userAgent.match(
+      /iPhone|Android|BlackBerry/i,
+    );
     this.defaultWidth = config.defaultWidth;
     this.defaultHeight = config.defaultHeight;
     this.canvas = canvas;
     this.canvas.width = this.defaultWidth;
     this.canvas.height = this.defaultHeight;
     window.canvas = this.canvas;
-    PIXI.loader.load(this.init.bind(this));
+    PIXI.loader
+      .add('../assets/lobby.json')
+
+      .load(this.init.bind(this));
   }
 
   init() {
     const stage = new PIXI.Container();
-    const renderer = PIXI.autoDetectRenderer(this.canvas.width, this.canvas.height, {
-      view: this.canvas,
-      transparent: true,
-      antialias: true,
-      autoResize: true,
-    });
+    const renderer = PIXI.autoDetectRenderer(
+      this.canvas.width,
+      this.canvas.height,
+      {
+        view: this.canvas,
+        transparent: true,
+        antialias: true,
+        autoResize: true,
+      },
+    );
 
     this.app = { stage, renderer, view: this.canvas };
     config.app = { stage, renderer, view: this.canvas };
