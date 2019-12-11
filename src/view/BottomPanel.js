@@ -24,7 +24,8 @@ export class BottomPanel extends PIXI.Container {
     this.healtTf.position.set(500, 20);
     this.addChild(this.healtTf);
 
-    const trapTexture = this.createRectangleButton().generateCanvasTexture();
+    let trapTexture = PIXI.utils.TextureCache['../assets/trab_back.png'];
+
     const oneTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
     oneTrapBtn.pointerdown = evt => {
       console.log(evt);

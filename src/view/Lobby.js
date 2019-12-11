@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
-import { Button } from './ui/Button';
+import { ButtonText } from './ui/ButtonText';
 
 export class Lobby extends PIXI.Container {
   constructor() {
@@ -13,12 +13,10 @@ export class Lobby extends PIXI.Container {
     bg.endFill();
     this.addChild(bg);
 
-    const grT = this.createRectangleButton().generateCanvasTexture();
-    this.btnNewGame = new Button(
-      PIXI.Texture.fromImage('Game_btn0000'),
-      PIXI.Texture.fromImage('Game_btn0001'),
-      PIXI.Texture.fromImage('Game_btn0001'),
-    );
+    let texture = PIXI.utils.TextureCache['../assets/button.png'];
+    let sprite = new PIXI.Sprite(texture);
+
+    this.btnNewGame = new ButtonText(texture, texture, texture, 'Play');
 
     this.btnNewGame.position.set(
       config.defaultWidth * 0.5 - this.btnNewGame.width * 0.5,

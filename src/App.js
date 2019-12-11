@@ -27,7 +27,8 @@ export class App {
     window.canvas = this.canvas;
     PIXI.loader
       .add('../assets/lobby.json')
-
+      .add('../assets/button.png')
+      .add('../assets/trab_back.png')
       .load(this.init.bind(this));
   }
 
