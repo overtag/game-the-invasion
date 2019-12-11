@@ -42,6 +42,6 @@ export class EnemyBase extends PIXI.Container {
   }
 
   remove() {
-    eventEmitter.emit(EVENTS.ENEMY_DEATH, { enemy: this });
+    eventEmitter.emit(EVENTS.ENEMY_DEATH, { enemy: this, gold: 5 });
   }
 }

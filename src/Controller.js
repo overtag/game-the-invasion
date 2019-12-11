@@ -26,6 +26,16 @@ export class Controller extends PIXI.Container {
     eventEmitter.on(EVENTS.PAY_TRAP, this.payTrap, this);
     eventEmitter.on(EVENTS.ENEMY_HAS_COME, this.enemyHasCome, this);
     eventEmitter.on(EVENTS.LEVEL_COMPLETE, this.levelComplete, this);
+    eventEmitter.on(EVENTS.ENEMY_DEATH, this.enemyDeath, this);
+  }
+
+  enemyDeath(evt) {
+    console.log('GOLD', evt, this.glod);
+
+    this.gold += evt.gold;
+    console.log('GOLD', evt, this.gold);
+
+    eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
   }
 
   levelComplete() {
