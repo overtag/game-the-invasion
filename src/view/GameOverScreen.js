@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
-import { Button } from './ui/Button';
+import { ButtonText } from './ui/ButtonText';
 
 function update(obj) {
   obj.update();
@@ -12,16 +12,14 @@ export class GameOverScreen extends PIXI.Container {
     super();
 
     const bg = new PIXI.Sprite(PIXI.Texture.fromImage('GameOver_mc0000'));
+    bg.scale.set(1.2, 1.2);
     bg.anchor.set(0.5, 0);
     bg.position.set(config.defaultWidth * 0.5, 0);
     this.addChild(bg);
-    const grT = this.createRectangleButton().generateCanvasTexture();
 
-    this.restartBtn = new Button(
-      PIXI.Texture.fromImage('Replay_btn0000'),
-      PIXI.Texture.fromImage('Replay_btn0001'),
-      PIXI.Texture.fromImage('Replay_btn0001'),
-    );
+    let texture = PIXI.utils.TextureCache['../assets/button.png'];
+
+    this.restartBtn = new ButtonText(texture, texture, texture, 'Restart');
     this.addChild(this.restartBtn);
     this.restartBtn.position.set(
       config.defaultWidth * 0.5 - this.restartBtn.width * 0.5,
@@ -31,15 +29,11 @@ export class GameOverScreen extends PIXI.Container {
       eventEmitter.emit(EVENTS.NEW_GAME_CONTROLLER);
     };
 
-    this.lobbyBtn = new Button(
-      PIXI.Texture.fromImage('Game_btn0000'),
-      PIXI.Texture.fromImage('Game_btn0001'),
-      PIXI.Texture.fromImage('Game_btn0001'),
-    );
+    this.lobbyBtn = new ButtonText(texture, texture, texture, 'Lobby');
     this.addChild(this.lobbyBtn);
     this.lobbyBtn.position.set(
       config.defaultWidth * 0.5 - this.lobbyBtn.width * 0.5,
-      400,
+      500,
     );
 
     this.lobbyBtn.onclick = () => {

@@ -7,8 +7,7 @@ export class BaseTrap extends PIXI.Container {
   constructor() {
     super();
 
-    const texture = this.createRectangle().generateCanvasTexture();
-    this.sprite = new PIXI.Sprite(texture);
+    this.sprite = new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
     this.sprite.anchor.set(0.5, 0.5);
     this.addChild(this.sprite);
   }

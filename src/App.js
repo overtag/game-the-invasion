@@ -27,7 +27,12 @@ export class App {
     window.canvas = this.canvas;
     PIXI.loader
       .add('../assets/lobby.json')
-
+      .add('../assets/button.png')
+      .add('../assets/trab_back.png')
+      .add('../assets/zombie.json')
+      .add('../assets/ZJester.json')
+      .add('../assets/rake.json')
+      .add('../assets/rake_effect.json')
       .load(this.init.bind(this));
   }
 

@@ -32,4 +32,17 @@ export const config = {
   TRAP_FENCE: 1,
 
   ENEMY_MAX_Y: 1136 - 150,
+  textFont: {
+    fontFamily: 'Helvetica',
+    fontSize: 66,
+    fontWeight: '100',
+    fill: 0xffffff,
+    align: 'center',
+    wordWrap: true,
+    wordWrapWidth: 400,
+    dropShadow: true,
+    dropShadowDistance: 1,
+    dropShadowAlpha: 0.5,
+    dropShadowAngle: 120,
+  },
 };

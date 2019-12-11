@@ -24,10 +24,15 @@ export class BottomPanel extends PIXI.Container {
     this.healtTf.position.set(500, 20);
     this.addChild(this.healtTf);
 
-    const trapTexture = this.createRectangleButton().generateCanvasTexture();
+    let trapTexture = PIXI.utils.TextureCache['../assets/trab_back.png'];
+
     const oneTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
+
+    const rakeSprite = new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
+    rakeSprite.anchor.set(0.5, 0.5);
+    rakeSprite.position.set(oneTrapBtn.width * 0.5, oneTrapBtn.height * 0.5);
+    oneTrapBtn.addChild(rakeSprite);
     oneTrapBtn.pointerdown = evt => {
-      console.log(evt);
       this.payTrap(config.TRAP_RAKE, evt);
     };
 
