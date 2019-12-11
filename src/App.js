@@ -29,6 +29,8 @@ export class App {
       .add('../assets/lobby.json')
       .add('../assets/button.png')
       .add('../assets/trab_back.png')
+      .add('../assets/zombie.json')
+      .add('../assets/ZJester.json')
       .load(this.init.bind(this));
   }
 

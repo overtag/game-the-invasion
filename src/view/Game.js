@@ -14,7 +14,7 @@ export class Game extends PIXI.Container {
     super();
 
     const bg = new PIXI.Graphics();
-    bg.beginFill(0xffcc00);
+    bg.beginFill(0x43602b);
     bg.drawRect(0, 0, config.defaultWidth, config.defaultHeight);
     bg.endFill();
     this.addChild(bg);

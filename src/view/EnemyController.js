@@ -1,24 +1,10 @@
 import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
-import { EnemyBase } from './enemies/EnemyBase';
 
 function update(obj) {
   obj.update();
 }
-
-const level = [
-  {
-    types: ['base'],
-    count: 6,
-    interval: 120,
-  },
-  {
-    types: ['base'],
-    count: 6,
-    interval: 120,
-  },
-];
 
 export class EnemyController {
   constructor(universe) {
@@ -47,18 +33,11 @@ export class EnemyController {
   }
 
   add(evt) {
-    const enemy = this.createEnemy(evt.type);
+    const { enemy } = evt;
     const startX = Math.random() * (config.defaultWidth - enemy.width);
-    enemy.position.set(startX, 0);
+    enemy.init(startX, 0);
     this.universe.addChild(enemy);
     this.enemies.push(enemy);
-  }
-
-  createEnemy(type) {
-    switch (type) {
-      case 'base':
-        return new EnemyBase();
-    }
   }
 
   update(evt) {

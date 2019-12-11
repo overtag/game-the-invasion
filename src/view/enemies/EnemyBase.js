@@ -1,28 +1,46 @@
 import * as PIXI from 'pixi.js';
 import { config } from '../../config';
 import { eventEmitter, EVENTS } from '../../events/EventEmitter';
+import { getTexture, types } from './types';
 
 export class EnemyBase extends PIXI.Container {
   constructor() {
     super();
 
-    const trapTexture = this.createRectangleButton().generateCanvasTexture();
-    this.sprite = new PIXI.Sprite(trapTexture);
-    this.addChild(this.sprite);
+    // this.sprite = new PIXI.Sprite(trapTexture);
 
     this.health = 1;
     this.sprite = null;
-
-    this.speed = 10;
+    this.speed = 3;
+    this.textureArray = [];
+    this.type = types.Patch;
   }
 
-  createRectangleButton() {
-    const graphics = new PIXI.Graphics();
-    graphics.beginFill(0xffffff);
-    graphics.drawRect(0, 0, 80, 80);
-    graphics.endFill();
+  initSprite() {
+    this.textureArray = getTexture(this.type);
+    this.sprite = new PIXI.extras.AnimatedSprite(this.textureArray);
+    this.sprite.anchor.set(0.5, 0.5);
+    this.sprite.rotation = Math.PI / 2;
+    this.sprite.position.set(0, 0);
+    this.sprite.scale.set(2);
+    this.sprite.gotoAndPlay(4);
+    this.sprite.animationSpeed = 0.5;
 
-    return graphics;
+    this.addChild(this.sprite);
+
+    //this.addChild(this.createRectangle());
+  }
+
+  init(x, y) {
+    this.initSprite();
+    this.health = 1;
+    // this.healthBar.init(this.health);
+    this.sprite.gotoAndPlay(
+      Math.floor(Math.random() * this.textureArray.length - 1),
+    );
+    this.sprite.alpha = 1;
+    this.position.set(x, y);
+    // this.healthBar.y = this.sprite.height - this.healthBar.height;
   }
 
   damage(value) {
@@ -43,5 +61,14 @@ export class EnemyBase extends PIXI.Container {
 
   remove() {
     eventEmitter.emit(EVENTS.ENEMY_DEATH, { enemy: this });
+  }
+
+  createRectangleButton() {
+    const graphics = new PIXI.Graphics();
+    graphics.beginFill(0xffffff);
+    graphics.drawRect(0, 0, 80, 80);
+    graphics.endFill();
+
+    return graphics;
   }
 }
