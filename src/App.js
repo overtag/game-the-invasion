@@ -28,6 +28,7 @@ export class App {
     PIXI.loader
       .add('../assets/lobby.json')
       .add('../assets/button.png')
+      .add('../assets/back.json')
       .add('../assets/trab_back.png')
       .add('../assets/zombie.json')
       .add('../assets/ZJester.json')

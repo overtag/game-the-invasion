@@ -7,14 +7,11 @@ export class Lobby extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Graphics();
-    bg.beginFill(0x235a3b);
-    bg.drawRect(0, 0, config.defaultWidth, config.defaultHeight);
-    bg.endFill();
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('back'));
+
     this.addChild(bg);
 
     let texture = PIXI.utils.TextureCache['../assets/button.png'];
-    let sprite = new PIXI.Sprite(texture);
 
     this.btnNewGame = new ButtonText(texture, texture, texture, 'Play');
 
