@@ -1,13 +1,11 @@
 import * as PIXI from 'pixi.js';
 
 export const types = {
-  Patch: 'Patch_mc',
-  Jester: 'ZJester_mc',
+  rake: 'RakeEffect_mc',
 };
 
 const Names = {
-  Patch_mc: 20,
-  ZJester_mc: 80,
+  RakeEffect_mc: 13,
 };
 
 export function getTexture(type) {
