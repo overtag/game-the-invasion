@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
-import { BaseTrap } from './traps/BaseTrap';
+import { Rake } from './traps/Rake';
 
 function update(obj) {
   obj.update();
@@ -36,7 +36,7 @@ export class TrapController {
   createTrap(type) {
     switch (type) {
       case config.TRAP_RAKE:
-        return new BaseTrap();
+        return new Rake();
 
       case config.TRAP_SHEEP:
         break;
