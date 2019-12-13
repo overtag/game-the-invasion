@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
 import { Rake } from './traps/Rake';
+import { Sheep } from './traps/Sheep';
 
 function update(obj) {
   obj.update();
@@ -39,6 +40,7 @@ export class TrapController {
         return new Rake();
 
       case config.TRAP_SHEEP:
+        return new Sheep();
         break;
       case config.TRAP_FENCE:
         break;
