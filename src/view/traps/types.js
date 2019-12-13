@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js';
 
 export const types = {
   rake: 'RakeEffect_mc',
+  sheep: 'RakeEffect_mc',
 };
 
 const Names = {

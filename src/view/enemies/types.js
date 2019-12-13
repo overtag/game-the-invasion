@@ -3,6 +3,11 @@ import * as PIXI from 'pixi.js';
 export const types = {
   Patch: 'Patch_mc',
   Jester: 'ZJester_mc',
+  Fire: 'ZFire_mc',
+  Woman: 'ZWoman_mc',
+  ZombieV5: 'ZombieV5_mc',
+  ZombieV6: 'ZombieV6_mc',
+  Zombie: 'zombie_mc',
 };
 
 const Names = {

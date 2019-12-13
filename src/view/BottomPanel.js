@@ -35,6 +35,10 @@ export class BottomPanel extends PIXI.Container {
 
     const twoTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
     twoTrapBtn.position.set(155, 35);
+    twoTrapBtn.pointerdown = evt => {
+      this.payTrap(config.TRAP_SHEEP, evt);
+    };
+
     this.addChild(twoTrapBtn);
 
     const threeTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
