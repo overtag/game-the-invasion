@@ -26,6 +26,7 @@ export class App {
     this.canvas.height = this.defaultHeight;
     window.canvas = this.canvas;
     PIXI.loader
+      .add('../assets/game_back.json')
       .add('../assets/lobby.json')
       .add('../assets/button.png')
       .add('../assets/back.json')

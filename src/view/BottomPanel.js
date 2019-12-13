@@ -10,18 +10,12 @@ export class BottomPanel extends PIXI.Container {
     this.isDrag = false;
     this.targetSprite = null;
 
-    const bg = new PIXI.Graphics();
-    bg.beginFill(0xd7dce1);
-    bg.drawRect(0, 0, config.defaultWidth, 150);
-    bg.endFill();
-    this.addChild(bg);
-
     this.coinsTf = new PIXI.Text('0', config.panel_text);
-    this.coinsTf.position.set(500, 60);
+    this.coinsTf.position.set(400, 80);
     this.addChild(this.coinsTf);
 
     this.healtTf = new PIXI.Text('0', config.panel_text);
-    this.healtTf.position.set(500, 20);
+    this.healtTf.position.set(400, 40);
     this.addChild(this.healtTf);
 
     let trapTexture = PIXI.utils.TextureCache['../assets/trab_back.png'];

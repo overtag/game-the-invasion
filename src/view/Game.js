@@ -13,10 +13,8 @@ export class Game extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Graphics();
-    bg.beginFill(0x43602b);
-    bg.drawRect(0, 0, config.defaultWidth, config.defaultHeight);
-    bg.endFill();
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('game_back'));
+
     this.addChild(bg);
 
     this.enemyController = new EnemyController(this);
@@ -24,8 +22,8 @@ export class Game extends PIXI.Container {
 
     this.bottomPanel = new BottomPanel();
     this.bottomPanel.position.set(
-      0,
-      config.defaultHeight - this.bottomPanel.height,
+      +125,
+      config.defaultHeight - this.bottomPanel.height - 35,
     );
     this.addChild(this.bottomPanel);
     this.visible = false;

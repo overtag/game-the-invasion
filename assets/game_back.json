@@ -1,0 +1,19 @@
+﻿{"frames": {
+
+"game_back":
+{
+	"frame": {"x":3,"y":3,"w":643,"h":1139},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":643,"h":1139},
+	"sourceSize": {"w":643,"h":1139}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "18.0.0.107",
+	"image": "game_back.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":2048},
+	"scale": "1"
+}
+}
