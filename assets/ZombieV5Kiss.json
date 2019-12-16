@@ -1,0 +1,171 @@
+﻿{"frames": {
+
+"ZombieV5Kiss_mc0000":
+{
+	"frame": {"x":3,"y":3,"w":63,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0001":
+{
+	"frame": {"x":69,"y":3,"w":62,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0002":
+{
+	"frame": {"x":134,"y":3,"w":61,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0003":
+{
+	"frame": {"x":3,"y":39,"w":61,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0004":
+{
+	"frame": {"x":67,"y":39,"w":60,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0005":
+{
+	"frame": {"x":130,"y":39,"w":60,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0006":
+{
+	"frame": {"x":193,"y":39,"w":60,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0007":
+{
+	"frame": {"x":3,"y":76,"w":61,"h":35},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0008":
+{
+	"frame": {"x":67,"y":76,"w":60,"h":35},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0009":
+{
+	"frame": {"x":130,"y":76,"w":60,"h":35},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0010":
+{
+	"frame": {"x":193,"y":76,"w":60,"h":35},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0011":
+{
+	"frame": {"x":3,"y":114,"w":61,"h":35},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0012":
+{
+	"frame": {"x":67,"y":114,"w":60,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0013":
+{
+	"frame": {"x":130,"y":114,"w":60,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0014":
+{
+	"frame": {"x":193,"y":114,"w":60,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0015":
+{
+	"frame": {"x":3,"y":152,"w":60,"h":34},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0016":
+{
+	"frame": {"x":66,"y":152,"w":61,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0017":
+{
+	"frame": {"x":130,"y":152,"w":61,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0018":
+{
+	"frame": {"x":3,"y":189,"w":62,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+},
+"ZombieV5Kiss_mc0019":
+{
+	"frame": {"x":3,"y":3,"w":63,"h":33},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":63,"h":35},
+	"sourceSize": {"w":63,"h":35}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "18.0.0.107",
+	"image": "ZombieV5Kiss.png",
+	"format": "RGBA8888",
+	"size": {"w":256,"h":256},
+	"scale": "1"
+}
+}
