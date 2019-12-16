@@ -12,6 +12,10 @@ export class TrapScreen extends PIXI.Container {
     );
     eventEmitter.on(EVENTS.PAY_TRAP, this.startDrag, this);
     eventEmitter.on(EVENTS.CLEAN_GAME, this.cleanGame, this);
+
+    this.rakeTexture = PIXI.Texture.fromImage(`RakeEffect_mc0000`);
+    this.sheepTexture = PIXI.Texture.fromImage(`Sheep_mc0000`);
+    this.targetSprite = new PIXI.Sprite(this.getTexture(config.TRAP_RAKE));
   }
 
   cleanGame() {
@@ -35,13 +39,22 @@ export class TrapScreen extends PIXI.Container {
     return graphics;
   }
 
+  getTexture(type) {
+    switch (type) {
+      case config.TRAP_RAKE:
+        return this.rakeTexture;
+      case config.TRAP_SHEEP:
+        return this.sheepTexture;
+    }
+  }
   startDrag(evt) {
     if (this.isDrag) return;
 
     const { type } = evt;
     this.currentType = type;
 
-    this.targetSprite = new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
+    this.targetSprite.texture = this.getTexture(type);
+    this.targetSprite.visible = true;
     // new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
     this.targetSprite.anchor.set(0.5, 0.5);
 

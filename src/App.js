@@ -29,6 +29,7 @@ export class App {
       .add('../assets/game_back.json')
       .add('../assets/lobby.json')
       .add('../assets/button.png')
+      .add('../assets/Sheep_effect.json')
       .add('../assets/back.json')
       .add('../assets/trab_back.png')
       .add('../assets/zombie.json')

@@ -12,7 +12,12 @@ export class Sheep extends BaseTrap {
     this.speed = 0.3;
     this.orientation = LEFT;
     this.type = types.sheep;
+    this.sprite = new PIXI.extras.AnimatedSprite(getTexture(this.type));
+    this.sprite.scale.set(2, 2);
+    this.sprite.anchor.set(0.5, 0.5);
+    this.addChild(this.sprite);
     this.initEffect();
+    console.log(this.type);
   }
 
   init(point) {
