@@ -4,6 +4,6 @@ import { types } from './types';
 export class Woman extends EnemyBase {
   constructor(universe) {
     super();
-    this.type = types.Woman;
+    this.type = types.ZWoman;
   }
 }
