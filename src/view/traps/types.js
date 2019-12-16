@@ -2,11 +2,12 @@ import * as PIXI from 'pixi.js';
 
 export const types = {
   rake: 'RakeEffect_mc',
-  sheep: 'RakeEffect_mc',
+  sheep: 'Sheep2L_mc',
 };
 
 const Names = {
   RakeEffect_mc: 13,
+  Sheep2L_mc: 20,
 };
 
 export function getTexture(type) {

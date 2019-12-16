@@ -8,12 +8,16 @@ export class BaseTrap extends PIXI.Container {
   constructor() {
     super();
     this.type = types.rake;
+
+    this.sprite = null;
+    this.effectSprite = null;
+  }
+
+  initSprite() {
     this.sprite = new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
     this.sprite.scale.set(2, 2);
     this.sprite.anchor.set(0.5, 0.5);
     this.addChild(this.sprite);
-
-    this.effectSprite = null;
   }
 
   initEffect() {

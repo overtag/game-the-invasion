@@ -47,6 +47,14 @@ export class BottomPanel extends PIXI.Container {
 
     this.addChild(twoTrapBtn);
 
+    const sheepSprite = new PIXI.Sprite(
+      PIXI.Texture.fromImage('Sheep2L_mc0000'),
+    );
+    sheepSprite.anchor.set(0.5, 0.5);
+    sheepSprite.position.set(twoTrapBtn.width * 0.5, twoTrapBtn.height * 0.5);
+
+    twoTrapBtn.addChild(sheepSprite);
+
     const threeTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
     threeTrapBtn.position.set(255, 35);
     this.addChild(threeTrapBtn);

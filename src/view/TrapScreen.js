@@ -2,14 +2,17 @@ import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
 
+import { types } from './traps/types';
+
 export class TrapScreen extends PIXI.Container {
   constructor() {
     super();
     this.isDrag = false;
     this.currentType = -1;
-    this.targetSprite = new PIXI.Sprite(
-      this.createRectangle().generateCanvasTexture(),
-    );
+
+    this.rakeTexture = PIXI.Texture.fromImage(`${types.rake}0000`);
+    this.sheepTexture = PIXI.Texture.fromImage(`${types.sheep}0000`);
+    this.targetSprite = new PIXI.Sprite(this.rakeTexture);
     eventEmitter.on(EVENTS.PAY_TRAP, this.startDrag, this);
     eventEmitter.on(EVENTS.CLEAN_GAME, this.cleanGame, this);
   }
@@ -35,21 +38,34 @@ export class TrapScreen extends PIXI.Container {
     return graphics;
   }
 
+  getTexture(type) {
+    switch (type) {
+      case config.TRAP_RAKE:
+        return this.rakeTexture;
+
+      case config.TRAP_SHEEP:
+        return this.sheepTexture;
+        break;
+      case config.TRAP_FENCE:
+        break;
+    }
+  }
+
   startDrag(evt) {
     if (this.isDrag) return;
 
     const { type } = evt;
     this.currentType = type;
 
-    this.targetSprite = new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
+    this.targetSprite.texture = this.getTexture(type);
+
+    this.targetSprite.visible = true;
     // new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
     this.targetSprite.anchor.set(0.5, 0.5);
 
     const point = this.toLocal(evt.point);
     this.targetSprite.position.set(point.x, point.y);
     this.addChild(this.targetSprite);
-    console.log('startDrag');
-    this.isDrag = true;
 
     this.targetSprite.click = this.endDrag.bind(this);
     this.targetSprite.mousemove = this.dragAndDrop.bind(this);
