@@ -58,7 +58,6 @@ export class TrapScreen extends PIXI.Container {
     this.currentType = type;
 
     this.targetSprite.texture = this.getTexture(type);
-
     this.targetSprite.visible = true;
     // new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
     this.targetSprite.anchor.set(0.5, 0.5);
