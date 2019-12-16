@@ -1,9 +1,9 @@
 import { EnemyBase } from './EnemyBase';
 import { types } from './types';
 
-export class Ani extends EnemyBase {
+export class Woman2 extends EnemyBase {
   constructor(universe) {
     super();
-    this.type = types.Ani;
+    this.type = types.ZWoman2;
   }
 }
