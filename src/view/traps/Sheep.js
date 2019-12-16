@@ -1,5 +1,5 @@
 import { BaseTrap } from './BaseTrap';
-import { types } from './types';
+import { types, getTexture } from './types';
 import { config } from '../../config';
 
 const RIGHT = -1;
@@ -9,15 +9,24 @@ export class Sheep extends BaseTrap {
   constructor(universe) {
     super();
 
-    this.speed = 0.3;
+    this.speed = 1;
     this.orientation = LEFT;
     this.type = types.sheep;
-    this.sprite = new PIXI.extras.AnimatedSprite(getTexture(this.type));
-    this.sprite.scale.set(2, 2);
-    this.sprite.anchor.set(0.5, 0.5);
-    this.addChild(this.sprite);
+
+    this.initSprite();
     this.initEffect();
     console.log(this.type);
+  }
+
+  initSprite() {
+    const texture = getTexture(this.type);
+    this.sprite = new PIXI.extras.AnimatedSprite(getTexture(this.type));
+    this.sprite.anchor.set(0.5, 0.5);
+    this.sprite.position.set(-100, 50);
+    this.sprite.scale.set(2, 2);
+    this.sprite.loop = true;
+    this.sprite.animationSpeed = 1;
+    this.addChild(this.sprite);
   }
 
   init(point) {
@@ -25,11 +34,16 @@ export class Sheep extends BaseTrap {
 
     if (point.x < config.defaultWidth * 0.5) {
       this.orientation = LEFT;
-      this.position.x = 1;
+
+      this.sprite.scale.x = -2;
+      this.position.x = 1 + this.width * 1.5;
     } else {
+      this.sprite.scale.x = 2;
       this.orientation = RIGHT;
-      this.position.x = config.defaultWidth;
+      this.position.x = config.defaultWidth + this.width * 0.5;
     }
+
+    this.sprite.gotoAndPlay(0);
   }
 
   walkedAway() {

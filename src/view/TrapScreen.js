@@ -2,14 +2,17 @@ import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
 
+import { types } from './traps/types';
+
 export class TrapScreen extends PIXI.Container {
   constructor() {
     super();
     this.isDrag = false;
     this.currentType = -1;
-    this.targetSprite = new PIXI.Sprite(
-      this.createRectangle().generateCanvasTexture(),
-    );
+
+    this.rakeTexture = PIXI.Texture.fromImage(`${types.rake}0000`);
+    this.sheepTexture = PIXI.Texture.fromImage(`${types.sheep}0000`);
+    this.targetSprite = new PIXI.Sprite(this.rakeTexture);
     eventEmitter.on(EVENTS.PAY_TRAP, this.startDrag, this);
     eventEmitter.on(EVENTS.CLEAN_GAME, this.cleanGame, this);
 
@@ -43,10 +46,15 @@ export class TrapScreen extends PIXI.Container {
     switch (type) {
       case config.TRAP_RAKE:
         return this.rakeTexture;
+
       case config.TRAP_SHEEP:
         return this.sheepTexture;
+        break;
+      case config.TRAP_FENCE:
+        break;
     }
   }
+
   startDrag(evt) {
     if (this.isDrag) return;
 
@@ -61,8 +69,6 @@ export class TrapScreen extends PIXI.Container {
     const point = this.toLocal(evt.point);
     this.targetSprite.position.set(point.x, point.y);
     this.addChild(this.targetSprite);
-    console.log('startDrag');
-    this.isDrag = true;
 
     this.targetSprite.click = this.endDrag.bind(this);
     this.targetSprite.mousemove = this.dragAndDrop.bind(this);
