@@ -71,8 +71,6 @@ export class App {
       .add('../assets/enemies/ZRasta.json')
       .add('../assets/enemies/ZWoman.json')
       .add('../assets/enemies/ZWomanV2.json')
-
-      ///
       .add('../assets/game_back.json')
       .add('../assets/lobby.json')
       .add('../assets/button.png')
