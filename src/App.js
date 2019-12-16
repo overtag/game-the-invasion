@@ -37,6 +37,7 @@ export class App {
       .add('../assets/rake.json')
       .add('../assets/rake_effect.json')
       .add('../assets/Sheep.json')
+      .add('../assets/boom2.json')
       .load(this.init.bind(this));
   }
 

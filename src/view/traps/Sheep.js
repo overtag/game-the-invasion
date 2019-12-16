@@ -15,11 +15,9 @@ export class Sheep extends BaseTrap {
 
     this.initSprite();
     this.initEffect();
-    console.log(this.type);
   }
 
   initSprite() {
-    const texture = getTexture(this.type);
     this.sprite = new PIXI.extras.AnimatedSprite(getTexture(this.type));
     this.sprite.anchor.set(0.5, 0.5);
     this.sprite.position.set(-100, 50);
@@ -29,18 +27,31 @@ export class Sheep extends BaseTrap {
     this.addChild(this.sprite);
   }
 
+  initEffect() {
+    this.effectSprite = new PIXI.extras.AnimatedSprite(getTexture(types.boom2));
+    this.effectSprite.anchor.set(0.5, 0.5);
+    this.effectSprite.position.set(-100, 50);
+    this.effectSprite.scale.set(2, 2);
+    this.effectSprite.loop = false;
+    this.effectSprite.animationSpeed = 0.2;
+    this.addChild(this.effectSprite);
+    this.effectSprite.onComplete = evt => {
+      this.remove();
+    };
+  }
+
   init(point) {
     super.init(point);
 
     if (point.x < config.defaultWidth * 0.5) {
       this.orientation = LEFT;
 
-      this.sprite.scale.x = -2;
-      this.position.x = 1 + this.width * 1.5;
-    } else {
       this.sprite.scale.x = 2;
+      this.position.x = 1 + this.width;
+    } else {
+      this.sprite.scale.x = -2;
       this.orientation = RIGHT;
-      this.position.x = config.defaultWidth + this.width * 0.5;
+      this.position.x = config.defaultWidth + this.width;
     }
 
     this.sprite.gotoAndPlay(0);
