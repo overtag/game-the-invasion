@@ -28,10 +28,9 @@ export class App {
     PIXI.loader
       .add('../assets/enemies/Ani.json')
       .add('../assets/enemies/Arancar.json')
-      .add('../assets/enemies/zombie.json')
+      .add('../assets/enemies/Zombie.json')
       .add('../assets/enemies/ZJester.json')
-      .add('../assets/enemies/zombie.json')
-      .add('../assets/enemies/ZJester.json')
+
       .add('../assets/enemies/Beggar.json')
       .add('../assets/enemies/Bitten.json')
       .add('../assets/enemies/Boffin.json')
