@@ -13,11 +13,13 @@ export class Core extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Graphics();
-    bg.beginFill(0x235a3b);
-    bg.drawRect(0, 0, config.defaultWidth, config.defaultHeight);
-    bg.endFill();
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('game_back'));
+    bg.position.set(config.defaultWidth * 0.5, 0);
+    bg.anchor.set(0.5, 0);
+
     this.addChild(bg);
+
+    window.bg = bg;
 
     this.visible = false;
 

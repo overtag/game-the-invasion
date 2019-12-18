@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js';
 import { config } from '../../config';
 import { eventEmitter, EVENTS } from '../../events/EventEmitter';
 import { getTexture, types } from './types';
+import { HealthBar } from '../health/HealthBar';
 
 export class EnemyBase extends PIXI.Container {
   constructor() {
@@ -14,6 +15,8 @@ export class EnemyBase extends PIXI.Container {
     this.speed = 3;
     this.textureArray = [];
     this.type = types.Patch;
+    this.healthBar = new HealthBar();
+    this.addChild(this.healthBar);
   }
 
   initSprite() {
@@ -33,18 +36,22 @@ export class EnemyBase extends PIXI.Container {
 
   init(x, y) {
     this.initSprite();
-    this.health = 1;
+
     // this.healthBar.init(this.health);
     this.sprite.gotoAndPlay(
       Math.floor(Math.random() * this.textureArray.length - 1),
     );
     this.sprite.alpha = 1;
     this.position.set(x, y);
-    // this.healthBar.y = this.sprite.height - this.healthBar.height;
+
+    this.health = 1;
+    this.healthBar.init(this.health);
+    this.healthBar.y = -this.sprite.height * 0.5 - this.healthBar.height;
   }
 
   damage(value) {
     this.health -= value;
+    this.healthBar.damage(this.health);
     if (this.health <= 0) {
       this.remove();
     }
