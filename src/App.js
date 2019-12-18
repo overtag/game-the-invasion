@@ -28,15 +28,9 @@ export class App {
     PIXI.loader
       .add('../assets/enemies/Ani.json')
       .add('../assets/enemies/Arancar.json')
-<<<<<<< HEAD
-
-      .add('../assets/enemies/ZJester.json')
-      .add('../assets/enemies/Zombie.json')
-=======
       .add('../assets/enemies/Zombie.json')
       .add('../assets/enemies/ZJester.json')
 
->>>>>>> f3d7eb749c9d866e6abbfe0827a10cce70829ee5
       .add('../assets/enemies/Beggar.json')
       .add('../assets/enemies/Bitten.json')
       .add('../assets/enemies/Boffin.json')
@@ -80,7 +74,12 @@ export class App {
       .add('../assets/lobby.json')
       .add('../assets/button.png')
       .add('../assets/Sheep_effect.json')
+
       .add('../assets/back.json')
+      .add('../assets/LevelCemetery.json')
+
+      .add('../assets/Cross_effect.json')
+      .add('../assets/Cross.json')
       .add('../assets/trab_back.png')
       .add('../assets/rake.json')
       .add('../assets/rake_effect.json')

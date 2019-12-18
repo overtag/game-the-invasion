@@ -13,7 +13,7 @@ export class Game extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('game_back'));
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('LevelCemetery'));
 
     this.addChild(bg);
 
