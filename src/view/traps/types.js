@@ -4,7 +4,7 @@ export const types = {
   rake: 'RakeEffect_mc',
   sheep: 'Sheep_mc',
   boom2: 'Boom2_mc',
-  cross: 'Cross_mc',
+  cross: 'CrossEffect_mc',
   pumpkin: 'PumpkinEffect_mc',
   stone: 'Stone_mc',
 };
@@ -12,7 +12,6 @@ export const types = {
 export const price = {
   RakeEffect_mc: 3,
   Sheep_mc: 2,
-
   Cross_mc: 3,
   PumpkinEffect_mc: 2,
   Stone: 1,
@@ -22,7 +21,7 @@ const Names = {
   RakeEffect_mc: 13,
   Sheep_mc: 20,
   Boom2_mc: 14,
-  Cross_mc: 20,
+  CrossEffect_mc: 20,
   PumpkinEffect_mc: 25,
   Stone: 2,
 };
