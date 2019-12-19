@@ -54,7 +54,7 @@ import { EnemyBase } from './view/enemies/EnemyBase';
 
 const level = [
   {
-    types: [types.Patch, types.Jester],
+    types: [types.Patch, types.ZombieV2, types.ZombieV3, types.ZombieV5],
     count: 6,
     interval: 120,
   },
