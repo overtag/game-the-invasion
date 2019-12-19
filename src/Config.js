@@ -27,6 +27,10 @@ export const config = {
   STATE_SCREEN_WIN: 4,
   STATE_SCREEN_LEVELS: 5,
 
+  TRAP_CROSS: 3,
+  TRAP_PUMPKIN: 2,
+  TRAP_STONE: 1,
+
   TRAP_RAKE: 3,
   TRAP_SHEEP: 2,
   TRAP_FENCE: 1,

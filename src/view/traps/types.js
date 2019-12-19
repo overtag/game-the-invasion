@@ -5,6 +5,17 @@ export const types = {
   sheep: 'Sheep_mc',
   boom2: 'Boom2_mc',
   cross: 'Cross_mc',
+  pumpkin: 'PumpkinEffect_mc',
+  stone: 'Stone_mc',
+};
+
+export const price = {
+  RakeEffect_mc: 3,
+  Sheep_mc: 2,
+
+  Cross_mc: 3,
+  PumpkinEffect_mc: 2,
+  Stone: 1,
 };
 
 const Names = {
@@ -12,6 +23,8 @@ const Names = {
   Sheep_mc: 20,
   Boom2_mc: 14,
   Cross_mc: 20,
+  PumpkinEffect_mc: 25,
+  Stone: 2,
 };
 
 export function getTexture(type) {

@@ -78,8 +78,13 @@ export class App {
       .add('../assets/back.json')
       .add('../assets/LevelCemetery.json')
 
-      .add('../assets/Cross_effect.json')
       .add('../assets/Cross.json')
+      .add('../assets/Cross_effect.json')
+      .add('../assets/Pumpkin.json')
+      .add('../assets/Pumpkin_effect.json')
+      .add('../assets/Stone.json')
+      .add('../assets/Fairy.json')
+
       .add('../assets/trab_back.png')
       .add('../assets/rake.json')
       .add('../assets/rake_effect.json')

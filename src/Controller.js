@@ -63,7 +63,7 @@ export class Controller extends PIXI.Container {
   }
 
   payTrap(evt) {
-    this.gold -= evt.type;
+    this.gold -= evt.price;
     eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
   }
 

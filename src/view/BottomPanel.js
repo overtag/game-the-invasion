@@ -1,6 +1,8 @@
 import * as PIXI from 'pixi.js';
 import { config } from '../config';
 import { Button } from './ui/Button';
+import { types, price } from './traps/types';
+
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 
 export class BottomPanel extends PIXI.Container {
@@ -21,37 +23,42 @@ export class BottomPanel extends PIXI.Container {
     let trapTexture = PIXI.utils.TextureCache['../assets/trab_back.png'];
 
     const oneTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
+    oneTrapBtn.position.set(50, 35);
+    this.addChild(oneTrapBtn);
+    oneTrapBtn.pointerdown = evt => {
+      this.payTrap(types.cross, evt);
+    };
 
-    const rakeSprite = new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
+    const rakeSprite = new PIXI.Sprite(PIXI.Texture.fromImage('Cross_mc0000'));
     rakeSprite.anchor.set(0.5, 0.5);
     rakeSprite.position.set(oneTrapBtn.width * 0.5, oneTrapBtn.height * 0.5);
     oneTrapBtn.addChild(rakeSprite);
-    oneTrapBtn.pointerdown = evt => {
-      this.payTrap(config.TRAP_RAKE, evt);
-    };
-
-    oneTrapBtn.position.set(50, 35);
-    this.addChild(oneTrapBtn);
 
     const twoTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
     twoTrapBtn.position.set(155, 35);
+    this.addChild(twoTrapBtn);
     twoTrapBtn.pointerdown = evt => {
-      this.payTrap(config.TRAP_SHEEP, evt);
+      this.payTrap(types.pumpkin, evt);
     };
 
-    this.addChild(twoTrapBtn);
-
     const sheepSprite = new PIXI.Sprite(
-      PIXI.Texture.fromImage('Sheep2L_mc0000'),
+      PIXI.Texture.fromImage('Pumpkin_mc0000'),
     );
     sheepSprite.anchor.set(0.5, 0.5);
     sheepSprite.position.set(twoTrapBtn.width * 0.5, twoTrapBtn.height * 0.5);
-
     twoTrapBtn.addChild(sheepSprite);
 
     const threeTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
     threeTrapBtn.position.set(255, 35);
     this.addChild(threeTrapBtn);
+
+    const stoneSprite = new PIXI.Sprite(PIXI.Texture.fromImage('Stone_mc0000'));
+    sheepSprite.anchor.set(0.5, 0.5);
+    sheepSprite.position.set(
+      threeTrapBtn.width * 0.5,
+      threeTrapBtn.height * 0.5,
+    );
+    threeTrapBtn.addChild(stoneSprite);
 
     eventEmitter.on(EVENTS.UPDATE_GOLD, evt => {
       console.log('UPDATE_GOLD', evt);
@@ -74,13 +81,17 @@ export class BottomPanel extends PIXI.Container {
   }
 
   payTrap(type, evt) {
-    if (+this.coinsTf.text - type < 0) {
+    if (+this.coinsTf.text - price[type] < 0) {
       console.log('Нужно больше золота');
       return;
     }
 
     console.log('createTrap', type, evt);
 
-    eventEmitter.emit(EVENTS.PAY_TRAP, { type, point: evt.data.global });
+    eventEmitter.emit(EVENTS.PAY_TRAP, {
+      type,
+      point: evt.data.global,
+      price: price[type],
+    });
   }
 }

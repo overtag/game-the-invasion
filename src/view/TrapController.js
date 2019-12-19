@@ -1,8 +1,12 @@
 import * as PIXI from 'pixi.js';
 import { eventEmitter, EVENTS } from '../events/EventEmitter';
 import { config } from '../config';
+import { types } from './traps/types';
 import { Rake } from './traps/Rake';
 import { Sheep } from './traps/Sheep';
+import { Cross } from './traps/Cross';
+import { Pumpkin } from './traps/Pumpkin';
+import { Stone } from './traps/Stone';
 
 function update(obj) {
   obj.update();
@@ -26,7 +30,6 @@ export class TrapController {
   }
 
   remove(evt) {
-    console.log('remove');
     const { trap } = evt;
     const index = this.traps.findIndex(curr => curr === trap);
     this.traps.splice(index, 1);
@@ -36,13 +39,20 @@ export class TrapController {
 
   createTrap(type) {
     switch (type) {
-      case config.TRAP_RAKE:
+      case types.rake:
         return new Rake();
 
-      case config.TRAP_SHEEP:
+      case types.sheep:
         return new Sheep();
         break;
-      case config.TRAP_FENCE:
+      case types.cross:
+        return new Cross();
+        break;
+      case types.pumpkin:
+        return new Pumpkin();
+        break;
+      case types.stone:
+        return new Stone();
         break;
     }
   }
