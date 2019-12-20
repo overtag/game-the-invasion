@@ -1,5 +1,6 @@
 import { BaseTrap } from './BaseTrap';
 import { types, getTexture } from './types';
+import { Amath } from '../../utils/Amath';
 
 export class Pumpkin extends BaseTrap {
   constructor() {
@@ -7,6 +8,20 @@ export class Pumpkin extends BaseTrap {
     this.type = types.pumpkin;
     this.initSprite();
     this.initEffect();
+
+    this.isPlayEffect = false;
+    this.timerId = null;
+  }
+
+  init(point) {
+    super.init(point);
+    this.isPlayEffect = true;
+
+    this.timerId = setTimeout(() => {
+      this.effectSprite.gotoAndPlay(0);
+      this.effectSprite.visible = true;
+      this.sprite.visible = false;
+    }, 3000);
   }
 
   initSprite() {
@@ -27,5 +42,22 @@ export class Pumpkin extends BaseTrap {
     this.effectSprite.onComplete = evt => {
       this.remove();
     };
+  }
+
+  collision(enemy) {
+    if (
+      Amath.hitTestRectangle(this, enemy) &&
+      this.isPlayEffect &&
+      this.sprite.visible
+    ) {
+      enemy.damage(1);
+    } else {
+      // console.log('----');
+    }
+  }
+
+  remove() {
+    clearTimeout(this.timerId);
+    super.remove();
   }
 }

@@ -10,7 +10,7 @@ export class EnemyBase extends PIXI.Container {
 
     // this.sprite = new PIXI.Sprite(trapTexture);
 
-    this.health = 1;
+    this.health = 3;
     this.sprite = null;
     this.speed = 3;
     this.textureArray = [];
@@ -44,14 +44,19 @@ export class EnemyBase extends PIXI.Container {
     this.sprite.alpha = 1;
     this.position.set(x, y);
 
-    this.health = 1;
+    this.health = 3;
     this.healthBar.init(this.health);
     this.healthBar.y = -this.sprite.height * 0.5 - this.healthBar.height;
   }
 
   damage(value) {
+    console.log('this.health', this.health, value);
     this.health -= value;
     this.healthBar.damage(this.health);
+    this.speed = 0;
+    setTimeout(() => {
+      this.speed = 3;
+    }, 300);
     if (this.health <= 0) {
       this.remove();
     }

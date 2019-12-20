@@ -66,6 +66,97 @@ const level = [
 ];
 
 export class WaveCreator {
+  createEnemy(type) {
+    switch (type) {
+      case types.Patch:
+        return new Patch();
+      case types.Jester:
+        return new Jester();
+      case types.Ani:
+        return new Ani();
+      case types.Arancar:
+        return new Arancar();
+      case types.Beggar:
+        return new Beggar();
+      case types.Bitten:
+        return new Bitten();
+      case types.Boffin:
+        return new Boffin();
+      case types.Butcher:
+        return new Butcher();
+      case types.Clown:
+        return new Clown();
+      case types.Director:
+        return new Director();
+
+      case types.Doll:
+        return new Doll();
+      case types.Fire:
+        return new Fire();
+      case types.HappyImp:
+        return new HappyImp();
+      case types.HeadZombie:
+        return new HeadZombie();
+      case types.Iceman:
+        return new Iceman();
+      case types.Kiss:
+        return new Kiss();
+      case types.Liprikon:
+        return new Liprikon();
+      case types.MasqueradeV1:
+        return new MasqueradeV1();
+      case types.MasqueradeV2:
+        return new MasqueradeV2();
+      case types.Menos:
+        return new Menos();
+      case types.Mutant:
+        return new Mutant();
+      case types.PatchKiss:
+        return new PatchKiss();
+      case types.Possessed:
+        return new Possessed();
+      case types.Rambo:
+        return new Rambo();
+      case types.Vampire:
+        return new Vampire();
+      case types.Vampiressa:
+        return new Vampiressa();
+
+      case types.Witch:
+        return new Witch();
+      case types.Woman:
+        return new Woman();
+      case types.Woman2:
+        return new Woman2();
+      case types.Wonk:
+        return new Wonk();
+      case types.YukiOnna:
+        return new YukiOnna();
+      case types.ZCyborg:
+        return new ZCyborg();
+      case types.ZFire:
+        return new ZFire();
+      case types.Zombie:
+        return new Zombie();
+      case types.ZombieElectro:
+        return new ZombieElectro();
+      case types.ZombieLab:
+        return new ZombieLab();
+      case types.ZombieV2:
+        return new ZombieV2();
+      case types.ZombieV3:
+        return new ZombieV3();
+      case types.ZombieV5:
+        return new ZombieV5();
+      case types.ZombieV5Kiss:
+        return new ZombieV5Kiss();
+      case types.ZombieV6:
+        return new ZombieV6();
+      case types.ZRasta:
+        return new ZRasta();
+    }
+  }
+
   constructor() {
     this.wave = null;
     this.isPlay = false;
@@ -105,15 +196,6 @@ export class WaveCreator {
 
     if (this.wave.count <= 0) {
       this.newWave(level);
-    }
-  }
-
-  createEnemy(type) {
-    switch (type) {
-      case types.Patch:
-        return new Patch();
-      case types.Jester:
-        return new Jester();
     }
   }
 }
