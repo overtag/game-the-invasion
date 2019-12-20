@@ -30,10 +30,7 @@ export class Controller extends PIXI.Container {
   }
 
   enemyDeath(evt) {
-    console.log('GOLD', evt, this.glod);
-
     this.gold += evt.gold;
-    console.log('GOLD', evt, this.gold);
 
     eventEmitter.emit(EVENTS.UPDATE_GOLD, { gold: this.gold });
   }

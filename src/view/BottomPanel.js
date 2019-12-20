@@ -59,6 +59,9 @@ export class BottomPanel extends PIXI.Container {
       threeTrapBtn.height * 0.5,
     );
     threeTrapBtn.addChild(stoneSprite);
+    threeTrapBtn.pointerdown = evt => {
+      this.payTrap(types.stone, evt);
+    };
 
     eventEmitter.on(EVENTS.UPDATE_GOLD, evt => {
       this.coinsTf.text = evt.gold;
@@ -83,8 +86,6 @@ export class BottomPanel extends PIXI.Container {
       console.log('Нужно больше золота');
       return;
     }
-
-    console.log('createTrap', type, evt);
 
     eventEmitter.emit(EVENTS.PAY_TRAP, {
       type,

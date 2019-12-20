@@ -50,19 +50,20 @@ export class EnemyBase extends PIXI.Container {
   }
 
   damage(value) {
-    console.log('this.health', this.health, value);
     this.health -= value;
     this.healthBar.damage(this.health);
     this.speed = 0;
     setTimeout(() => {
       this.speed = 3;
-    }, 300);
+    }, 3000);
+
     if (this.health <= 0) {
       this.remove();
     }
   }
 
   update() {
+    console.log('thisspeed', this.speed);
     this.y += this.speed;
 
     if (this.y > config.ENEMY_MAX_Y) {

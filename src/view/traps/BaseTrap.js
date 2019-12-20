@@ -8,7 +8,7 @@ export class BaseTrap extends PIXI.Container {
   constructor() {
     super();
     this.type = types.rake;
-
+    this.damage = 1;
     this.sprite = null;
     this.effectSprite = null;
   }
@@ -57,13 +57,12 @@ export class BaseTrap extends PIXI.Container {
 
   collision(enemy) {
     if (Amath.hitTestRectangle(this, enemy) && this.sprite.visible) {
-      enemy.damage(1);
+      enemy.damage(this.damage);
 
       this.effectSprite.gotoAndPlay(0);
       this.effectSprite.visible = true;
       this.sprite.visible = false;
     } else {
-      // console.log('----');
     }
   }
 

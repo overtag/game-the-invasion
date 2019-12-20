@@ -50,7 +50,7 @@ export class Core extends PIXI.Container {
 
   setScreen(evt) {
     this.visible = true;
-    console.log('ev1t', evt);
+
     switch (evt.state) {
       case config.STATE_SCREEN_GAME:
         this.game.show();

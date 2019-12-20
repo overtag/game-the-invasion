@@ -48,7 +48,6 @@ export class TrapScreen extends PIXI.Container {
   }
 
   getTexture(type) {
-    console.log('TYPE', type, types, types.cross);
     switch (type) {
       case types.rake:
         return this.rakeTexture;
@@ -70,7 +69,7 @@ export class TrapScreen extends PIXI.Container {
 
     const { type } = evt;
     this.currentType = type;
-    console.log(this.getTexture(type));
+
     this.targetSprite.texture = this.getTexture(type);
     this.targetSprite.visible = true;
     // new PIXI.Sprite(PIXI.Texture.fromImage('Rake_mc0000'));
@@ -94,7 +93,7 @@ export class TrapScreen extends PIXI.Container {
   dragAndDrop(evt) {
     if (!this.isDrag) return;
     const point = this.toLocal(evt.data.global);
-    //--console.log("point", point);
+
     this.targetSprite.x = point.x;
     this.targetSprite.y = point.y;
   }

@@ -28,9 +28,7 @@ export class Button extends PIXI.Container {
     this.mouseout = this.mouseout.bind(this);
   }
 
-  onclick() {
-    console.log('KLICK');
-  }
+  onclick() {}
 
   defaultClick() {
     this.onclick();

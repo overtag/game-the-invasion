@@ -50,9 +50,8 @@ export class Pumpkin extends BaseTrap {
       this.isPlayEffect &&
       this.sprite.visible
     ) {
-      enemy.damage(1);
+      enemy.damage(this.damage);
     } else {
-      // console.log('----');
     }
   }
 
