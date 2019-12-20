@@ -56,7 +56,7 @@ export class BaseTrap extends PIXI.Container {
   }
 
   collision(enemy) {
-    if (Amath.hitTestRectangle(this, enemy)) {
+    if (Amath.hitTestRectangle(this, enemy) && this.sprite.visible) {
       enemy.damage(1);
 
       this.effectSprite.gotoAndPlay(0);
