@@ -84,7 +84,7 @@ export class App {
       .add('../assets/Pumpkin_effect.json')
       .add('../assets/Stone.json')
       .add('../assets/Fairy.json')
-
+      .add('../assets/panelBack.json')
       .add('../assets/trab_back.png')
       .add('../assets/rake.json')
       .add('../assets/rake_effect.json')
