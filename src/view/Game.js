@@ -22,8 +22,8 @@ export class Game extends PIXI.Container {
 
     this.bottomPanel = new BottomPanel();
     this.bottomPanel.position.set(
-      +125,
-      config.defaultHeight - this.bottomPanel.height - 35,
+      0,
+      config.defaultHeight - this.bottomPanel.height,
     );
     this.addChild(this.bottomPanel);
     this.visible = false;

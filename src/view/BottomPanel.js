@@ -9,6 +9,11 @@ export class BottomPanel extends PIXI.Container {
   constructor() {
     super();
 
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('panelBack0000'));
+    bg.position.set(config.defaultWidth * 0.5, 0);
+    bg.anchor.set(0.5, 0);
+
+    this.addChild(bg);
     this.isDrag = false;
     this.targetSprite = null;
 
