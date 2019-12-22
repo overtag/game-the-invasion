@@ -1,0 +1,19 @@
+﻿{"frames": {
+
+"panelBack0000":
+{
+	"frame": {"x":3,"y":3,"w":664,"h":119},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":664,"h":119},
+	"sourceSize": {"w":664,"h":119}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "18.0.0.107",
+	"image": "Invasion Game2.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}
