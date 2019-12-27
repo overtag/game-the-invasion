@@ -27,7 +27,7 @@ export class HealthBar extends PIXI.Container {
       if (this.cache.length <= i) {
         const hearth = new PIXI.Sprite(PIXI.Texture.fromImage('Life_mc0000'));
         hearth.rotation = Math.PI / 2;
-        hearth.anchor.set(0, 0.5);
+        hearth.anchor.set(0, 0);
         hearth.scale.set(5, 5);
         hearth.position.set(i * (hearth.width + 3), 0);
         this.container.addChild(hearth);

@@ -46,7 +46,8 @@ export class EnemyBase extends PIXI.Container {
 
     this.health = 3;
     this.healthBar.init(this.health);
-    this.healthBar.y = -this.sprite.height * 0.5 - this.healthBar.height;
+    this.healthBar.y = -this.sprite.height * 0.5 - this.healthBar.height - 20;
+    this.healthBar.x = this.sprite.width * 0.5;
   }
 
   damage(value) {
