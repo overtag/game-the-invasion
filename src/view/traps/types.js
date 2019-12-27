@@ -7,6 +7,7 @@ export const types = {
   cross: 'CrossEffect_mc',
   pumpkin: 'PumpkinEffect_mc',
   stone: 'Stone_mc',
+  fairy: 'FairyMenBtn',
 };
 
 export const price = {
@@ -24,6 +25,7 @@ const Names = {
   CrossEffect_mc: 20,
   PumpkinEffect_mc: 25,
   Stone: 2,
+  FairyMenBtn: 164,
 };
 
 export function getTexture(type) {
