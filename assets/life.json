@@ -2,11 +2,11 @@
 
 "Life_mc0000":
 {
-	"frame": {"x":3,"y":3,"w":10,"h":12},
+	"frame": {"x":3,"y":3,"w":22,"h":17},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":10,"h":12},
-	"sourceSize": {"w":10,"h":12}
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":17},
+	"sourceSize": {"w":22,"h":17}
 }},
 "meta": {
 	"app": "Adobe Animate",

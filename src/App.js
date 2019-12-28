@@ -90,6 +90,7 @@ export class App {
       .add('../assets/rake_effect.json')
       .add('../assets/Sheep.json')
       .add('../assets/boom2.json')
+      .add('../assets/life.json')
       .load(this.init.bind(this));
   }
 

@@ -26,10 +26,10 @@ export class HealthBar extends PIXI.Container {
     for (let i = 0; i < health; i++) {
       if (this.cache.length <= i) {
         const hearth = new PIXI.Sprite(PIXI.Texture.fromImage('Life_mc0000'));
-        hearth.rotation = Math.PI / 2;
+
         hearth.anchor.set(0, 0);
-        hearth.scale.set(5, 5);
-        hearth.position.set(i * (hearth.width + 3), 0);
+        // hearth.scale.set(5, 5);
+        hearth.position.set(i * 23, 0);
         this.container.addChild(hearth);
         this.cache.push(hearth);
       } else {
@@ -37,7 +37,7 @@ export class HealthBar extends PIXI.Container {
       }
     }
 
-    this.container.position.set(-this.container.width * 0.5, 0);
+    this.container.position.set(0, 0);
   }
 
   createRectangle() {

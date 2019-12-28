@@ -1,147 +1,131 @@
-﻿{"frames": {
-
-"GameOver_mc0000":
-{
-	"frame": {"x":3,"y":3,"w":530,"h":170},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":530,"h":170},
-	"sourceSize": {"w":530,"h":170}
-},
-"Game_btn0000":
-{
-	"frame": {"x":536,"y":3,"w":133,"h":57},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":62},
-	"sourceSize": {"w":136,"h":62}
-},
-"Game_btn0001":
-{
-	"frame": {"x":672,"y":3,"w":133,"h":57},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":62},
-	"sourceSize": {"w":136,"h":62}
-},
-"Game_btn0002":
-{
-	"frame": {"x":808,"y":3,"w":133,"h":57},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":3,"y":5,"w":136,"h":62},
-	"sourceSize": {"w":136,"h":62}
-},
-"Game_btn0003":
-{
-	"frame": {"x":672,"y":3,"w":133,"h":57},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":136,"h":62},
-	"sourceSize": {"w":136,"h":62}
-},
-"LevelComplete_mc0000":
-{
-	"frame": {"x":3,"y":176,"w":530,"h":170},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":530,"h":170},
-	"sourceSize": {"w":530,"h":170}
-},
-"LifePlus_btn0000":
-{
-	"frame": {"x":536,"y":176,"w":12,"h":12},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":12},
-	"sourceSize": {"w":12,"h":12}
-},
-"LifePlus_btn0001":
-{
-	"frame": {"x":551,"y":176,"w":12,"h":12},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":12},
-	"sourceSize": {"w":12,"h":12}
-},
-"Life_mc0000":
-{
-	"frame": {"x":566,"y":176,"w":10,"h":12},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":10,"h":12},
-	"sourceSize": {"w":10,"h":12}
-},
-"NextLevel_btn0000":
-{
-	"frame": {"x":579,"y":176,"w":133,"h":60},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":133,"h":60},
-	"sourceSize": {"w":133,"h":60}
-},
-"NextLevel_btn0001":
-{
-	"frame": {"x":715,"y":176,"w":133,"h":60},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":133,"h":60},
-	"sourceSize": {"w":133,"h":60}
-},
-"Play_mc0000":
-{
-	"frame": {"x":3,"y":349,"w":530,"h":169},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":530,"h":169},
-	"sourceSize": {"w":530,"h":169}
-},
-"Replay_btn0000":
-{
-	"frame": {"x":536,"y":349,"w":133,"h":57},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":133,"h":57},
-	"sourceSize": {"w":133,"h":57}
-},
-"Replay_btn0001":
-{
-	"frame": {"x":672,"y":349,"w":133,"h":57},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":133,"h":57},
-	"sourceSize": {"w":133,"h":57}
-},
-"Restart_btn0000":
-{
-	"frame": {"x":808,"y":349,"w":133,"h":57},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":133,"h":57},
-	"sourceSize": {"w":133,"h":57}
-},
-"Restart_btn0001":
-{
-	"frame": {"x":3,"y":521,"w":133,"h":57},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":133,"h":57},
-	"sourceSize": {"w":133,"h":57}
-},
-"YouWin_mc0000":
-{
-	"frame": {"x":139,"y":521,"w":530,"h":169},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":530,"h":169},
-	"sourceSize": {"w":530,"h":169}
-}},
-"meta": {
-	"app": "Adobe Animate",
-	"version": "18.0.0.107",
-	"image": "lobby.png",
-	"format": "RGBA8888",
-	"size": {"w":1024,"h":1024},
-	"scale": "1"
-}
+﻿{
+  "frames": {
+    "GameOver_mc0000": {
+      "frame": { "x": 3, "y": 3, "w": 530, "h": 170 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 530, "h": 170 },
+      "sourceSize": { "w": 530, "h": 170 }
+    },
+    "Game_btn0000": {
+      "frame": { "x": 536, "y": 3, "w": 133, "h": 57 },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 136, "h": 62 },
+      "sourceSize": { "w": 136, "h": 62 }
+    },
+    "Game_btn0001": {
+      "frame": { "x": 672, "y": 3, "w": 133, "h": 57 },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 136, "h": 62 },
+      "sourceSize": { "w": 136, "h": 62 }
+    },
+    "Game_btn0002": {
+      "frame": { "x": 808, "y": 3, "w": 133, "h": 57 },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": { "x": 3, "y": 5, "w": 136, "h": 62 },
+      "sourceSize": { "w": 136, "h": 62 }
+    },
+    "Game_btn0003": {
+      "frame": { "x": 672, "y": 3, "w": 133, "h": 57 },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 136, "h": 62 },
+      "sourceSize": { "w": 136, "h": 62 }
+    },
+    "LevelComplete_mc0000": {
+      "frame": { "x": 3, "y": 176, "w": 530, "h": 170 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 530, "h": 170 },
+      "sourceSize": { "w": 530, "h": 170 }
+    },
+    "LifePlus_btn0000": {
+      "frame": { "x": 536, "y": 176, "w": 12, "h": 12 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 12, "h": 12 },
+      "sourceSize": { "w": 12, "h": 12 }
+    },
+    "LifePlus_btn0001": {
+      "frame": { "x": 551, "y": 176, "w": 12, "h": 12 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 12, "h": 12 },
+      "sourceSize": { "w": 12, "h": 12 }
+    },
+    "Life_mc0000": {
+      "frame": { "x": 566, "y": 176, "w": 10, "h": 12 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 10, "h": 12 },
+      "sourceSize": { "w": 10, "h": 12 }
+    },
+    "NextLevel_btn0000": {
+      "frame": { "x": 579, "y": 176, "w": 133, "h": 60 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 133, "h": 60 },
+      "sourceSize": { "w": 133, "h": 60 }
+    },
+    "NextLevel_btn0001": {
+      "frame": { "x": 715, "y": 176, "w": 133, "h": 60 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 133, "h": 60 },
+      "sourceSize": { "w": 133, "h": 60 }
+    },
+    "Play_mc0000": {
+      "frame": { "x": 3, "y": 349, "w": 530, "h": 169 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 530, "h": 169 },
+      "sourceSize": { "w": 530, "h": 169 }
+    },
+    "Replay_btn0000": {
+      "frame": { "x": 536, "y": 349, "w": 133, "h": 57 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 133, "h": 57 },
+      "sourceSize": { "w": 133, "h": 57 }
+    },
+    "Replay_btn0001": {
+      "frame": { "x": 672, "y": 349, "w": 133, "h": 57 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 133, "h": 57 },
+      "sourceSize": { "w": 133, "h": 57 }
+    },
+    "Restart_btn0000": {
+      "frame": { "x": 808, "y": 349, "w": 133, "h": 57 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 133, "h": 57 },
+      "sourceSize": { "w": 133, "h": 57 }
+    },
+    "Restart_btn0001": {
+      "frame": { "x": 3, "y": 521, "w": 133, "h": 57 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 133, "h": 57 },
+      "sourceSize": { "w": 133, "h": 57 }
+    },
+    "YouWin_mc0000": {
+      "frame": { "x": 139, "y": 521, "w": 530, "h": 169 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 530, "h": 169 },
+      "sourceSize": { "w": 530, "h": 169 }
+    }
+  },
+  "meta": {
+    "app": "Adobe Animate",
+    "version": "18.0.0.107",
+    "image": "lobby.png",
+    "format": "RGBA8888",
+    "size": { "w": 1024, "h": 1024 },
+    "scale": "1"
+  }
 }

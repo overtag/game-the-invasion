@@ -58,8 +58,8 @@ export class BottomPanel extends PIXI.Container {
     this.addChild(threeTrapBtn);
 
     const stoneSprite = new PIXI.Sprite(PIXI.Texture.fromImage('Stone_mc0000'));
-    sheepSprite.anchor.set(0.5, 0.5);
-    sheepSprite.position.set(
+    stoneSprite.anchor.set(0.5, 0.5);
+    stoneSprite.position.set(
       threeTrapBtn.width * 0.5,
       threeTrapBtn.height * 0.5,
     );
