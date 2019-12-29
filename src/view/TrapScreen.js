@@ -23,6 +23,7 @@ export class TrapScreen extends PIXI.Container {
 
     this.rakeTexture = PIXI.Texture.fromImage(`RakeEffect_mc0000`);
     this.sheepTexture = PIXI.Texture.fromImage(`Sheep_mc0000`);
+    this.fairyTexture = PIXI.Texture.fromImage(`FairyMen_mc0000`);
     this.targetSprite = new PIXI.Sprite(this.getTexture(config.TRAP_RAKE));
   }
 
@@ -48,6 +49,7 @@ export class TrapScreen extends PIXI.Container {
   }
 
   getTexture(type) {
+    console.log('TYPE');
     switch (type) {
       case types.rake:
         return this.rakeTexture;
@@ -59,8 +61,8 @@ export class TrapScreen extends PIXI.Container {
         return this.pumpkinTexture;
       case types.stone:
         return this.stoneTexture;
-      case config.TRAP_FENCE:
-        break;
+      case types.fairy:
+        return this.fairyTexture;
     }
   }
 

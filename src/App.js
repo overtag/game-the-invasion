@@ -88,6 +88,7 @@ export class App {
       .add('../assets/trab_back.png')
       .add('../assets/rake.json')
       .add('../assets/rake_effect.json')
+      .add('../assets/FairyTrap.json')
       .add('../assets/Sheep.json')
       .add('../assets/boom2.json')
       .add('../assets/life.json')

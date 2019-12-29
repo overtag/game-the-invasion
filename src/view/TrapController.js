@@ -7,6 +7,7 @@ import { Sheep } from './traps/Sheep';
 import { Cross } from './traps/Cross';
 import { Pumpkin } from './traps/Pumpkin';
 import { Stone } from './traps/Stone';
+import { Fairy } from './traps/Fairy';
 
 function update(obj) {
   obj.update();
@@ -53,7 +54,8 @@ export class TrapController {
         break;
       case types.stone:
         return new Stone();
-        break;
+      case types.fairy:
+        return new Fairy();
     }
   }
 

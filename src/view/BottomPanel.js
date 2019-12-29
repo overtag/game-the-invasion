@@ -86,9 +86,10 @@ export class BottomPanel extends PIXI.Container {
     fairySprite.position.set(550, 55);
     this.addChild(fairySprite);
     fairySprite.pointerdown = evt => {
-      this.payTrap(types.stone, evt);
+      this.payTrap(types.fairy, evt);
     };
     fairySprite.gotoAndPlay(0);
+    fairySprite.interactive = true;
     eventEmitter.on(EVENTS.UPDATE_GOLD, evt => {
       this.coinsTf.text = evt.gold;
     });

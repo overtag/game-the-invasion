@@ -56,7 +56,14 @@ export class BaseTrap extends PIXI.Container {
   }
 
   collision(enemy) {
-    if (Amath.hitTestRectangle(this, enemy) && this.sprite.visible) {
+    if (
+      Amath.hitTestRectangle(this, enemy) &&
+      this.sprite.visible &&
+      Math.abs(
+        this.y + this.sprite.height * 0.5 - enemy.y - enemy.sprite.height * 0.5,
+      ) <= 10
+    ) {
+      console.log();
       enemy.damage(this.damage);
 
       this.effectSprite.gotoAndPlay(0);
