@@ -27,34 +27,42 @@ export class BottomPanel extends PIXI.Container {
 
     let trapTexture = PIXI.utils.TextureCache['../assets/trab_back.png'];
 
-    const oneTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
-    oneTrapBtn.position.set(50, 35);
+    const oneTrapBtn = new Button(
+      PIXI.Texture.fromImage('Cross_btn0000'),
+      PIXI.Texture.fromImage('Cross_btn0001'),
+      PIXI.Texture.fromImage('Cross_btn0002'),
+    );
+    oneTrapBtn.position.set(170, 55);
     this.addChild(oneTrapBtn);
     oneTrapBtn.pointerdown = evt => {
       this.payTrap(types.cross, evt);
     };
 
-    const rakeSprite = new PIXI.Sprite(PIXI.Texture.fromImage('Cross_mc0000'));
-    rakeSprite.anchor.set(0.5, 0.5);
-    rakeSprite.position.set(oneTrapBtn.width * 0.5, oneTrapBtn.height * 0.5);
-    oneTrapBtn.addChild(rakeSprite);
-
-    const twoTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
-    twoTrapBtn.position.set(155, 35);
+    const twoTrapBtn = new Button(
+      PIXI.Texture.fromImage('Pumpkin_btn0000'),
+      PIXI.Texture.fromImage('Pumpkin_btn0001'),
+      PIXI.Texture.fromImage('Pumpkin_btn0002'),
+    );
+    twoTrapBtn.position.set(170 + 50, 55);
     this.addChild(twoTrapBtn);
     twoTrapBtn.pointerdown = evt => {
       this.payTrap(types.pumpkin, evt);
     };
 
-    const sheepSprite = new PIXI.Sprite(
+    /* const sheepSprite = new PIXI.Sprite(
       PIXI.Texture.fromImage('Pumpkin_mc0000'),
     );
+    //sheepSprite.scale.set(2);
     sheepSprite.anchor.set(0.5, 0.5);
     sheepSprite.position.set(twoTrapBtn.width * 0.5, twoTrapBtn.height * 0.5);
-    twoTrapBtn.addChild(sheepSprite);
+    twoTrapBtn.addChild(sheepSprite);*/
 
-    const threeTrapBtn = new Button(trapTexture, trapTexture, trapTexture);
-    threeTrapBtn.position.set(255, 35);
+    const threeTrapBtn = new Button(
+      PIXI.Texture.fromImage('Stone_btn0000'),
+      PIXI.Texture.fromImage('Stone_btn0001'),
+      PIXI.Texture.fromImage('Stone_btn0002'),
+    );
+    threeTrapBtn.position.set(270, 55);
     this.addChild(threeTrapBtn);
 
     const stoneSprite = new PIXI.Sprite(PIXI.Texture.fromImage('Stone_mc0000'));
@@ -68,6 +76,19 @@ export class BottomPanel extends PIXI.Container {
       this.payTrap(types.stone, evt);
     };
 
+    // FairyMenBtn0164
+
+    // FOUR
+    const fairySprite = new PIXI.extras.AnimatedSprite(
+      getTexture('FairyMenBtn'),
+    );
+    fairySprite.anchor.set(0.5, 0.5);
+    fairySprite.position.set(550, 55);
+    this.addChild(fairySprite);
+    fairySprite.pointerdown = evt => {
+      this.payTrap(types.stone, evt);
+    };
+    fairySprite.gotoAndPlay(0);
     eventEmitter.on(EVENTS.UPDATE_GOLD, evt => {
       this.coinsTf.text = evt.gold;
     });
@@ -75,15 +96,6 @@ export class BottomPanel extends PIXI.Container {
     eventEmitter.on(EVENTS.UPDATE_HEALTH, evt => {
       this.healtTf.text = evt.health;
     });
-  }
-
-  createRectangleButton() {
-    const graphics = new PIXI.Graphics();
-    graphics.beginFill(0xffffff);
-    graphics.drawRect(0, 0, 80, 80);
-    graphics.endFill();
-
-    return graphics;
   }
 
   payTrap(type, evt) {
@@ -98,4 +110,19 @@ export class BottomPanel extends PIXI.Container {
       price: price[type],
     });
   }
+}
+
+const Names = {
+  FairyMenBtn: 164,
+};
+
+//
+function getTexture(type) {
+  const textureArray = [];
+  for (let i = 0; i < Names[type]; i++) {
+    const textureName = `${type}${'0000'.substr(`${i}`.length)}${i}`;
+    textureArray.push(PIXI.Texture.from(textureName));
+  }
+
+  return textureArray;
 }

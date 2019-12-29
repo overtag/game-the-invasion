@@ -77,7 +77,7 @@ export class App {
 
       .add('../assets/back.json')
       .add('../assets/LevelCemetery.json')
-
+      .add('../assets/TrapButtons.json')
       .add('../assets/Cross.json')
       .add('../assets/Cross_effect.json')
       .add('../assets/Pumpkin.json')
