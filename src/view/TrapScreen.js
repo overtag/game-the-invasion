@@ -14,7 +14,7 @@ export class TrapScreen extends PIXI.Container {
     this.sheepTexture = PIXI.Texture.fromImage(`${types.sheep}0000`);
 
     this.crossTexture = PIXI.Texture.fromImage('Cross_mc0000');
-    this.pumpkinTexture = PIXI.Texture.fromImage(`${types.pumpkin}0000`);
+    this.pumpkinTexture = PIXI.Texture.fromImage(`Pumpkin_mc0000`);
     this.stoneTexture = PIXI.Texture.fromImage(`${types.stone}0000`);
 
     this.targetSprite = new PIXI.Sprite(this.rakeTexture);
@@ -79,6 +79,7 @@ export class TrapScreen extends PIXI.Container {
 
     const point = this.toLocal(evt.point);
     this.targetSprite.position.set(point.x, point.y);
+    this.targetSprite.scale.set(1.5, 1.5);
     this.addChild(this.targetSprite);
 
     this.targetSprite.click = this.endDrag.bind(this);
