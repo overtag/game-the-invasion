@@ -1,7 +1,7 @@
 import { BaseTrap } from './BaseTrap';
 import { types, getTexture } from './types';
 import { config } from '../../config';
-
+import { Amath } from '../../utils/Amath';
 const RIGHT = -1;
 const LEFT = 1;
 
@@ -9,7 +9,7 @@ export class Fairy extends BaseTrap {
   constructor(universe) {
     super();
 
-    this.speed = 1;
+    this.speed = 3;
     this.orientation = LEFT;
     this.type = types.fairy;
 
@@ -28,7 +28,9 @@ export class Fairy extends BaseTrap {
   }
 
   initEffect() {
-    this.effectSprite = new PIXI.extras.AnimatedSprite(getTexture(types.boom2));
+    this.effectSprite = new PIXI.extras.AnimatedSprite(
+      getTexture(types.fairyEffect),
+    );
     this.effectSprite.anchor.set(0.5, 0.5);
     this.effectSprite.position.set(-100, 50);
     this.effectSprite.scale.set(2, 2);
@@ -69,5 +71,15 @@ export class Fairy extends BaseTrap {
     this.x += this.speed * this.orientation;
     this.walkedAway();
     super.update(enemies);
+  }
+
+  collision(enemy) {
+    if (Amath.hitTestRectangle(this, enemy) && this.sprite.visible) {
+      console.log();
+      enemy.damage(this.damage);
+
+      this.playEffect(enemy);
+    } else {
+    }
   }
 }

@@ -1,19 +1,35 @@
 ﻿{"frames": {
 
-"Life_mc0000":
+"cupe0000":
 {
-	"frame": {"x":3,"y":3,"w":22,"h":17},
+	"frame": {"x":3,"y":3,"w":16,"h":20},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":17},
-	"sourceSize": {"w":22,"h":17}
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":20},
+	"sourceSize": {"w":16,"h":20}
+},
+"gold0000":
+{
+	"frame": {"x":22,"y":3,"w":13,"h":21},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":13,"h":21},
+	"sourceSize": {"w":13,"h":21}
+},
+"life0000":
+{
+	"frame": {"x":38,"y":3,"w":17,"h":15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":17,"h":15},
+	"sourceSize": {"w":17,"h":15}
 }},
 "meta": {
 	"app": "Adobe Animate",
 	"version": "18.0.0.107",
 	"image": "life.png",
 	"format": "RGBA8888",
-	"size": {"w":32,"h":32},
+	"size": {"w":64,"h":64},
 	"scale": "1"
 }
 }

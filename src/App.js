@@ -89,8 +89,10 @@ export class App {
       .add('../assets/rake.json')
       .add('../assets/rake_effect.json')
       .add('../assets/FairyTrap.json')
+      .add('../assets/FairyEffect.json')
       .add('../assets/Sheep.json')
       .add('../assets/boom2.json')
+      .add('../assets/target_trap.json')
       .add('../assets/life.json')
       .load(this.init.bind(this));
   }

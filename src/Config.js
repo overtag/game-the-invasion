@@ -21,6 +21,16 @@ export const config = {
     wordWrapWidth: 400,
   },
 
+  panel_gold_text: {
+    fontFamily: 'Helvetica',
+    fontSize: 25,
+    fontWeight: 'bold',
+    fill: 0x000000,
+    align: 'center',
+    wordWrap: true,
+    wordWrapWidth: 400,
+  },
+
   STATE_SCREEN_GAME: 1,
   STATE_SCREEN_LOBBY: 2,
   STATE_SCREEN_GAME_OVER: 3,

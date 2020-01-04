@@ -8,6 +8,7 @@ export const types = {
   pumpkin: 'PumpkinEffect_mc',
   stone: 'Stone_mc',
   fairy: 'FairyMen_mc',
+  fairyEffect: 'FairyEffect_mc',
 };
 
 export const price = {
@@ -27,6 +28,7 @@ const Names = {
   Stone: 2,
   FairyMenBtn: 164,
   FairyMen_mc: 19,
+  FairyEffect_mc: 14,
 };
 
 export function getTexture(type) {
