@@ -31,7 +31,10 @@ export class Stone extends BaseTrap {
       Amath.hitTestRectangle(this, enemy) &&
       this.sprite.visible &&
       Math.abs(
-        this.y + this.height * 0.5 - enemy.y - enemy.sprite.height * 0.5,
+        this.y +
+          this.height * 0.5 -
+          enemy.y -
+          enemy.spriteContainer.height * 0.5,
       ) <= 10
     ) {
       this.health -= 1;

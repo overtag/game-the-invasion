@@ -17,19 +17,22 @@ export class EnemyBase extends PIXI.Container {
     this.type = types.Patch;
     this.healthBar = new HealthBar();
     this.addChild(this.healthBar);
+
+    this.spriteContainer = new PIXI.Container();
+    this.addChild(this.createRectangleButton());
+    this.addChild(this.spriteContainer);
   }
 
   initSprite() {
     this.textureArray = getTexture(this.type);
     this.sprite = new PIXI.extras.AnimatedSprite(this.textureArray);
-    this.sprite.anchor.set(0.5, 0.5);
     this.sprite.rotation = Math.PI / 2;
-    this.sprite.position.set(0, 0);
     this.sprite.scale.set(2);
+    this.sprite.position.set(this.sprite.height, 0);
     this.sprite.gotoAndPlay(4);
     this.sprite.animationSpeed = 0.5;
 
-    this.addChild(this.sprite);
+    this.spriteContainer.addChild(this.sprite);
 
     //this.addChild(this.createRectangle());
   }
@@ -44,10 +47,11 @@ export class EnemyBase extends PIXI.Container {
     this.sprite.alpha = 1;
     this.position.set(x, y);
 
-    this.health = 3;
+    this.health = 1;
     this.healthBar.init(this.health);
     this.healthBar.y = -this.sprite.height * 0.5 - this.healthBar.height - 20;
-    this.healthBar.x = -this.healthBar.width * 0.5;
+    this.healthBar.x =
+      this.spriteContainer.width * 0.5 - this.healthBar.width * 0.5;
   }
 
   damage(value) {

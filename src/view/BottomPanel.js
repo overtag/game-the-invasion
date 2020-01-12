@@ -122,9 +122,9 @@ export class BottomPanel extends PIXI.Container {
     const fairySprite = new PIXI.extras.AnimatedSprite(
       getTexture('FairyMenBtn'),
     );
-    fairySprite.scale.set(2, 2);
+    fairySprite.scale.set(1.5, 1.5);
     fairySprite.anchor.set(0.5, 0.5);
-    fairySprite.position.set(550, 55);
+    fairySprite.position.set(550, 55 - 20);
     this.addChild(fairySprite);
     fairySprite.pointerdown = evt => {
       this.payTrap(types.fairy, evt);
@@ -134,13 +134,13 @@ export class BottomPanel extends PIXI.Container {
     fairySprite.interactive = true;
 
     const coin3 = new PIXI.Sprite(PIXI.Texture.fromImage('gold0000'));
-    coin3.position.set(545, 111);
+    coin3.position.set(545, 111 - 20);
     coin3.anchor.set(0.5, 0);
     this.addChild(coin3);
 
     const coins3Tf = new PIXI.Text('50', config.panel_gold_text);
     coins3Tf.anchor.set(0, 0.5);
-    coins3Tf.position.set(510, 110 + coin3.height * 0.5);
+    coins3Tf.position.set(510, 110 + coin3.height * 0.5 - 20);
     this.addChild(coins3Tf);
 
     //

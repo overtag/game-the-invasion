@@ -13,7 +13,7 @@ export class Game extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('LevelCemetery_mc0000'));
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('cemetery'));
 
     this.addChild(bg);
 
@@ -23,7 +23,7 @@ export class Game extends PIXI.Container {
     this.bottomPanel = new BottomPanel();
     this.bottomPanel.position.set(
       0,
-      config.defaultHeight - this.bottomPanel.height,
+      config.defaultHeight - this.bottomPanel.height + 20,
     );
     this.addChild(this.bottomPanel);
     this.visible = false;

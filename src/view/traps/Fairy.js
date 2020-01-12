@@ -12,15 +12,15 @@ export class Fairy extends BaseTrap {
     this.speed = 3;
     this.orientation = LEFT;
     this.type = types.fairy;
-
+    this.damage = 10;
     this.initSprite();
     this.initEffect();
   }
 
   initSprite() {
     this.sprite = new PIXI.extras.AnimatedSprite(getTexture(this.type));
-    this.sprite.anchor.set(0.5, 0.5);
-    this.sprite.position.set(-100, 50);
+    this.sprite.anchor.set(0, 0);
+
     this.sprite.scale.set(2, 2);
     this.sprite.loop = true;
     this.sprite.animationSpeed = 1;
@@ -31,14 +31,13 @@ export class Fairy extends BaseTrap {
     this.effectSprite = new PIXI.extras.AnimatedSprite(
       getTexture(types.fairyEffect),
     );
-    this.effectSprite.anchor.set(0.5, 0.5);
-    this.effectSprite.position.set(-100, 50);
+
     this.effectSprite.scale.set(2, 2);
     this.effectSprite.loop = false;
-    this.effectSprite.animationSpeed = 0.2;
-    this.addChild(this.effectSprite);
+    this.effectSprite.animationSpeed = 0.5;
+
     this.effectSprite.onComplete = evt => {
-      this.remove();
+      this.effectSprite.parent.removeChild(this.effectSprite);
     };
   }
 
@@ -47,13 +46,13 @@ export class Fairy extends BaseTrap {
 
     if (point.x < config.defaultWidth * 0.5) {
       this.orientation = LEFT;
-
       this.sprite.scale.x = -2;
-      this.position.x = 1 + this.width;
+      this.sprite.x = this.sprite.width;
+      this.position.x = 0 - this.sprite.width;
     } else {
       this.sprite.scale.x = 2;
       this.orientation = RIGHT;
-      this.position.x = config.defaultWidth + this.width;
+      this.position.x = config.defaultWidth;
     }
 
     this.sprite.gotoAndPlay(0);
@@ -74,12 +73,38 @@ export class Fairy extends BaseTrap {
   }
 
   collision(enemy) {
-    if (Amath.hitTestRectangle(this, enemy) && this.sprite.visible) {
+    const x = this.orientation === RIGHT ? 50 : 70;
+
+    if (
+      Math.abs(this.y + 100 - enemy.y - enemy.spriteContainer.height * 0.5) <=
+        50 &&
+      Math.abs(this.x + x - enemy.x - enemy.spriteContainer.width * 0.5) <=
+        50 &&
+      this.sprite.visible
+    ) {
       console.log();
+
       enemy.damage(this.damage);
 
       this.playEffect(enemy);
     } else {
     }
+  }
+
+  createCircle() {
+    const graphics = new PIXI.Graphics();
+    graphics.beginFill(0xffcc00);
+    graphics.drawCircle(0, 0, 50, 50);
+    graphics.endFill();
+
+    return graphics;
+  }
+
+  playEffect(enemy) {
+    this.parent.addChild(this.effectSprite);
+    this.effectSprite.position.set(enemy.x, enemy.y);
+    this.effectSprite.gotoAndPlay(0);
+    this.effectSprite.visible = true;
+    //this.sprite.visible = false;
   }
 }

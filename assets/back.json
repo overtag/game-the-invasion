@@ -1,12 +1,12 @@
 ﻿{"frames": {
 
-"back":
+"cemetery":
 {
-	"frame": {"x":3,"y":3,"w":636,"h":1136},
+	"frame": {"x":3,"y":3,"w":640,"h":1136},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":636,"h":1136},
-	"sourceSize": {"w":636,"h":1136}
+	"spriteSourceSize": {"x":0,"y":0,"w":640,"h":1136},
+	"sourceSize": {"w":640,"h":1136}
 }},
 "meta": {
 	"app": "Adobe Animate",

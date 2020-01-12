@@ -60,7 +60,7 @@ export class BaseTrap extends PIXI.Container {
       Amath.hitTestRectangle(this, enemy) &&
       this.sprite.visible &&
       Math.abs(
-        this.y + this.sprite.height * 0.5 - enemy.y - enemy.sprite.height * 0.5,
+        this.y + this.sprite.height - enemy.y - enemy.spriteContainer.height,
       ) <= 10
     ) {
       console.log();
