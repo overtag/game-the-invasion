@@ -13,7 +13,7 @@ export class Core extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('LevelCemetery'));
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('cemetery'));
     bg.position.set(config.defaultWidth * 0.5, 0);
     bg.anchor.set(0.5, 0);
 

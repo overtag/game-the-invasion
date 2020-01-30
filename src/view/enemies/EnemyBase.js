@@ -19,7 +19,7 @@ export class EnemyBase extends PIXI.Container {
     this.addChild(this.healthBar);
 
     this.spriteContainer = new PIXI.Container();
-    this.addChild(this.createRectangleButton());
+    // this.addChild(this.createRectangleButton());
     this.addChild(this.spriteContainer);
   }
 

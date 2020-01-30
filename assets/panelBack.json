@@ -1,19 +1,75 @@
-﻿{
-  "frames": {
-    "BottomPanel3": {
-      "frame": { "x": 3, "y": 3, "w": 341, "h": 117 },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": { "x": 0, "y": 0, "w": 341, "h": 117 },
-      "sourceSize": { "w": 341, "h": 117 }
-    }
-  },
-  "meta": {
-    "app": "Adobe Animate",
-    "version": "18.0.0.107",
-    "image": "panelBack.png",
-    "format": "RGBA8888",
-    "size": { "w": 512, "h": 512 },
-    "scale": "1"
-  }
+﻿{"frames": {
+
+"coin":
+{
+	"frame": {"x":3,"y":3,"w":42,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":42,"h":42},
+	"sourceSize": {"w":42,"h":42}
+},
+"cross.png":
+{
+	"frame": {"x":48,"y":3,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+"cube":
+{
+	"frame": {"x":147,"y":3,"w":36,"h":41},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":41},
+	"sourceSize": {"w":36,"h":41}
+},
+"fence.png":
+{
+	"frame": {"x":186,"y":3,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+},
+"heart":
+{
+	"frame": {"x":285,"y":3,"w":42,"h":39},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":42,"h":39},
+	"sourceSize": {"w":42,"h":39}
+},
+"lamp.png":
+{
+	"frame": {"x":330,"y":3,"w":96,"h":97},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":97},
+	"sourceSize": {"w":96,"h":97}
+},
+"panel_back.png":
+{
+	"frame": {"x":3,"y":103,"w":750,"h":146},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":750,"h":146},
+	"sourceSize": {"w":750,"h":146}
+},
+"pumpkin.png":
+{
+	"frame": {"x":756,"y":103,"w":96,"h":96},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},
+	"sourceSize": {"w":96,"h":96}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "18.0.0.107",
+	"image": "panelBack.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
 }
