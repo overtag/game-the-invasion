@@ -30,7 +30,7 @@ export class BottomPanel extends PIXI.Container {
     this.addChild(this.healtTf);
 
     const healt = new PIXI.Sprite(PIXI.Texture.fromImage('heart'));
-    healt.position.set(430, 7069);
+    healt.position.set(430, 69);
     healt.anchor.set(0.5, 0);
     this.addChild(healt);
 

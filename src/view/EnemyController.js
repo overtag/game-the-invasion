@@ -36,7 +36,7 @@ export class EnemyController {
     const { enemy } = evt;
     const startX = Math.random() * (config.defaultWidth - enemy.width);
     enemy.init(startX, 0);
-    this.universe.addChild(enemy);
+    this.universe.addChildAt(enemy, 1);
     this.enemies.push(enemy);
   }
 

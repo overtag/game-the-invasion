@@ -12,7 +12,7 @@ export class EnemyBase extends PIXI.Container {
     this.timerId = 0;
     this.health = 1;
     this.sprite = null;
-    this.speed = 3;
+    this.speed = 0.7;
     this.textureArray = [];
     this.type = types.Patch;
     this.healthBar = new HealthBar();
@@ -26,9 +26,8 @@ export class EnemyBase extends PIXI.Container {
   initSprite() {
     this.textureArray = getTexture(this.type);
     this.sprite = new PIXI.extras.AnimatedSprite(this.textureArray);
-    this.sprite.rotation = Math.PI / 2;
-    this.sprite.scale.set(2);
-    this.sprite.position.set(this.sprite.height, 0);
+    this.sprite.scale.set(0.9);
+    this.sprite.position.set(0, 0);
     this.sprite.gotoAndPlay(4);
     this.sprite.animationSpeed = 0.5;
 
@@ -49,7 +48,7 @@ export class EnemyBase extends PIXI.Container {
 
     this.health = 1;
     this.healthBar.init(this.health);
-    this.healthBar.y = -this.sprite.height * 0.5 - this.healthBar.height - 20;
+    this.healthBar.y = -10 - this.healthBar.height;
     this.healthBar.x =
       this.spriteContainer.width * 0.5 - this.healthBar.width * 0.5;
   }

@@ -75,6 +75,8 @@ export class App {
       .add('../assets/button.png')
       .add('../assets/Sheep_effect.json')
 
+      .add('../assets/newZombie/Zombie1.json')
+
       .add('../assets/back.json')
       .add('../assets/LevelCemetery.json')
       .add('../assets/TrapButtons.json')
