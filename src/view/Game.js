@@ -13,16 +13,17 @@ export class Game extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('cemetery2'));
-
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('cem'));
+    bg.width = 690;
+    bg.x = -25;
     this.addChild(bg);
 
     this.enemyController = new EnemyController(this);
     this.trapController = new TrapController(this);
 
     this.bottomPanel = new BottomPanel();
-    this.bottomPanel.position.set(0, config.defaultHeight - 135);
-    this.bottomPanel.width = 695;
+    this.bottomPanel.position.set(-5, config.defaultHeight - 135);
+    this.bottomPanel.width = 640;
     this.bottomPanel.height = 135;
     this.addChild(this.bottomPanel);
     this.visible = false;

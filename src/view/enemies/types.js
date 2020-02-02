@@ -2,8 +2,11 @@ import * as PIXI from 'pixi.js';
 
 export const types = {
   Zombie1: 'Zombie1',
+  Arancar: 'Arancar',
+  Ded: 'Ded',
+
   Ani: 'Ani_mc',
-  Arancar: 'Arancar_mc',
+
   Beggar: 'Beggar_mc',
   Bitten: 'Bitten_mc',
 
@@ -55,13 +58,16 @@ export const types = {
 };
 
 const Names = {
+  Arancar: 19,
+  Zombie1: 19,
+  Ded: 20,
   Patch_mc: 20,
   ZJester_mc: 80,
   Ani_mc: 20,
-  Arancar_mc: 40,
+
   Beggar_mc: 20,
   Bitten_mc: 20,
-  Zombie1: 19,
+
   Boffin_mc: 20,
   Butcher_mc: 20,
   Clown_mc: 80,

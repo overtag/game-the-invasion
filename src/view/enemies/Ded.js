@@ -1,14 +1,14 @@
 import { EnemyBase } from './EnemyBase';
 import { types } from './types';
 
-export class Arancar extends EnemyBase {
+export class Ded extends EnemyBase {
   constructor(universe) {
     super();
-    this.type = types.Arancar;
+    this.type = types.Ded;
   }
 
   initSprite() {
     super.initSprite();
-    this.sprite.animationSpeed = 0.3;
+    this.sprite.animationSpeed = 0.5;
   }
 }

@@ -9,7 +9,7 @@ export class BottomPanel extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('panel_back.png'));
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('panel_back1.png'));
     bg.position.set(0, 0);
 
     this.addChild(bg);
@@ -26,22 +26,66 @@ export class BottomPanel extends PIXI.Container {
     this.addChild(coin);
 
     this.healtTf = new PIXI.Text('0', config.panel_text);
-    this.healtTf.position.set(450, 73);
+    this.healtTf.position.set(450, 83);
     this.addChild(this.healtTf);
 
     const healt = new PIXI.Sprite(PIXI.Texture.fromImage('heart'));
-    healt.position.set(430, 69);
+    healt.position.set(430, 79);
     healt.anchor.set(0.5, 0);
     this.addChild(healt);
 
     this.scoreTf = new PIXI.Text('0', config.panel_text);
-    this.scoreTf.position.set(450, 105);
+    this.scoreTf.position.set(450, 125);
     this.addChild(this.scoreTf);
 
     const score = new PIXI.Sprite(PIXI.Texture.fromImage('cube'));
-    score.position.set(430, 101);
+    score.position.set(430, 120);
     score.anchor.set(0.5, 0);
     this.addChild(score);
+
+    const coin0 = new PIXI.Sprite(PIXI.Texture.fromImage('coin'));
+    coin0.scale.set(0.5);
+    coin0.position.set(115, 152);
+    coin0.anchor.set(0.5, 0.5);
+    this.addChild(coin0);
+
+    const coins0Tf = new PIXI.Text('5', config.panel_gold_text);
+    coins0Tf.anchor.set(0, 0.5);
+    coins0Tf.position.set(125, 150);
+    this.addChild(coins0Tf);
+
+    const coin1 = new PIXI.Sprite(PIXI.Texture.fromImage('coin'));
+    coin1.scale.set(0.5);
+    coin1.position.set(225, 152);
+    coin1.anchor.set(0.5, 0.5);
+    this.addChild(coin1);
+
+    const coins1Tf = new PIXI.Text('3', config.panel_gold_text);
+    coins1Tf.anchor.set(0, 0.5);
+    coins1Tf.position.set(235, 150);
+    this.addChild(coins1Tf);
+
+    const coin2 = new PIXI.Sprite(PIXI.Texture.fromImage('coin'));
+    coin2.scale.set(0.5);
+    coin2.position.set(335, 152);
+    coin2.anchor.set(0.5, 0.5);
+    this.addChild(coin2);
+
+    const coins2Tf = new PIXI.Text('1', config.panel_gold_text);
+    coins2Tf.anchor.set(0, 0.5);
+    coins2Tf.position.set(345, 150);
+    this.addChild(coins2Tf);
+
+    const coin3 = new PIXI.Sprite(PIXI.Texture.fromImage('coin'));
+    coin3.position.set(565, 150);
+    coin3.scale.set(0.5);
+    coin3.anchor.set(0.5, 0.5);
+    this.addChild(coin3);
+
+    const coins3Tf = new PIXI.Text('50', config.panel_gold_text);
+    coins3Tf.anchor.set(0, 0.5);
+    coins3Tf.position.set(575, 150);
+    this.addChild(coins3Tf);
 
     // ONE TRAP
     const oneTrapBtn = new Button(
@@ -57,16 +101,6 @@ export class BottomPanel extends PIXI.Container {
       this.payTrap(types.cross, evt);
     };
 
-    const coin0 = new PIXI.Sprite(PIXI.Texture.fromImage('gold0000'));
-    coin0.position.set(200, 87);
-    coin0.anchor.set(0.5, 0);
-    this.addChild(coin0);
-
-    const coins0Tf = new PIXI.Text('5', config.panel_gold_text);
-    coins0Tf.anchor.set(0, 0.5);
-    coins0Tf.position.set(180, 87 + coin0.height * 0.5);
-    this.addChild(coins0Tf);
-
     // TWO TRAP
     const twoTrapBtn = new Button(
       PIXI.Texture.fromImage('pumpkin.png'),
@@ -80,16 +114,6 @@ export class BottomPanel extends PIXI.Container {
     twoTrapBtn.pointerdown = evt => {
       this.payTrap(types.pumpkin, evt);
     };
-
-    const coin1 = new PIXI.Sprite(PIXI.Texture.fromImage('gold0000'));
-    coin1.position.set(265, 87);
-    coin1.anchor.set(0.5, 0);
-    this.addChild(coin1);
-
-    const coins1Tf = new PIXI.Text('3', config.panel_gold_text);
-    coins1Tf.anchor.set(0, 0.5);
-    coins1Tf.position.set(245, 87 + coin0.height * 0.5);
-    this.addChild(coins1Tf);
 
     // THREE TRAP
     const threeTrapBtn = new Button(
@@ -106,20 +130,12 @@ export class BottomPanel extends PIXI.Container {
       this.payTrap(types.stone, evt);
     };
 
-    const coin2 = new PIXI.Sprite(PIXI.Texture.fromImage('gold0000'));
-    coin2.position.set(330, 87);
-    coin2.anchor.set(0.5, 0);
-    this.addChild(coin2);
-
-    const coins2Tf = new PIXI.Text('1', config.panel_gold_text);
-    coins2Tf.anchor.set(0, 0.5);
-    coins2Tf.position.set(310, 87 + coin0.height * 0.5);
-    this.addChild(coins2Tf);
     // FairyMenBtn0164
 
     // FOUR
     const fairySprite = new PIXI.Sprite(PIXI.Texture.fromImage('lamp.png'));
-
+    fairySprite.width = 90;
+    fairySprite.height = 90;
     fairySprite.position.set(536, 46);
     this.addChild(fairySprite);
     fairySprite.pointerdown = evt => {
@@ -127,16 +143,6 @@ export class BottomPanel extends PIXI.Container {
     };
 
     fairySprite.interactive = true;
-
-    const coin3 = new PIXI.Sprite(PIXI.Texture.fromImage('gold0000'));
-    coin3.position.set(545, 111 - 20);
-    coin3.anchor.set(0.5, 0);
-    this.addChild(coin3);
-
-    const coins3Tf = new PIXI.Text('50', config.panel_gold_text);
-    coins3Tf.anchor.set(0, 0.5);
-    coins3Tf.position.set(510, 110 + coin3.height * 0.5 - 20);
-    this.addChild(coins3Tf);
 
     //
     eventEmitter.on(EVENTS.UPDATE_GOLD, evt => {

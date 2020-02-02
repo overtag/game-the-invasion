@@ -50,11 +50,12 @@ import { ZombieV5Kiss } from './view/enemies/ZombieV5Kiss';
 import { ZombieV6 } from './view/enemies/ZombieV6';
 import { ZRasta } from './view/enemies/ZRasta';
 import { Zombie1 } from './view/enemies/Zombie1';
+import { Ded } from './view/enemies/Ded';
 import { EnemyBase } from './view/enemies/EnemyBase';
 
 const level = [
   {
-    types: [types.Zombie1, types.Patch, types.Patch, types.Patch],
+    types: [types.Ded, types.Ded, types.Ded, types.Ded],
     count: 100,
     interval: 100,
   },
@@ -68,6 +69,8 @@ const level = [
 export class WaveCreator {
   createEnemy(type) {
     switch (type) {
+      case types.Ded:
+        return new Ded();
       case types.Zombie1:
         return new Zombie1();
       case types.Patch:

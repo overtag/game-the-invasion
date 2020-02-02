@@ -56,9 +56,17 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":750,"h":146},
 	"sourceSize": {"w":750,"h":146}
 },
+"panel_back1.png":
+{
+	"frame": {"x":3,"y":252,"w":695,"h":166},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":695,"h":166},
+	"sourceSize": {"w":695,"h":166}
+},
 "pumpkin.png":
 {
-	"frame": {"x":756,"y":103,"w":96,"h":96},
+	"frame": {"x":701,"y":252,"w":96,"h":96},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":96},

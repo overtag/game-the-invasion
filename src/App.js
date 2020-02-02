@@ -76,6 +76,10 @@ export class App {
       .add('../assets/Sheep_effect.json')
 
       .add('../assets/newZombie/Zombie1.json')
+      .add('../assets/newZombie/Arancar.json')
+      .add('../assets/newZombie/Ded.json')
+
+      .add('../assets/back222.json')
 
       .add('../assets/back.json')
       .add('../assets/LevelCemetery.json')

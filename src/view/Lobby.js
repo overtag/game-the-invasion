@@ -7,7 +7,7 @@ export class Lobby extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('cemetery'));
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('cemetery2'));
 
     this.addChild(bg);
 
