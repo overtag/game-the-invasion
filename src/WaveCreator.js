@@ -55,9 +55,9 @@ import { EnemyBase } from './view/enemies/EnemyBase';
 
 const level = [
   {
-    types: [types.Ded, types.Ded, types.Ded, types.Ded],
+    types: [types.Zombie1, types.Arancar, types.Ded, types.Zombie1],
     count: 100,
-    interval: 100,
+    interval: 200,
   },
   {
     types: [types.Zombie1, types.Zombie1],
