@@ -1,19 +1,19 @@
-﻿{"frames": {
-
-"Cross_mc0000":
-{
-	"frame": {"x":3,"y":3,"w":50,"h":49},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":49},
-	"sourceSize": {"w":50,"h":49}
-}},
-"meta": {
-	"app": "Adobe Animate",
-	"version": "18.0.0.107",
-	"image": "Cross.png",
-	"format": "RGBA8888",
-	"size": {"w":64,"h":64},
-	"scale": "1"
-}
+﻿{
+  "frames": {
+    "cross1.png": {
+      "frame": { "x": 3, "y": 3, "w": 154, "h": 163 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 154, "h": 163 },
+      "sourceSize": { "w": 154, "h": 163 }
+    }
+  },
+  "meta": {
+    "app": "Adobe Animate",
+    "version": "18.0.0.107",
+    "image": "Cross.png",
+    "format": "RGBA8888",
+    "size": { "w": 256, "h": 256 },
+    "scale": "1"
+  }
 }

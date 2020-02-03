@@ -10,8 +10,8 @@ export class Cross extends BaseTrap {
   }
 
   initSprite() {
-    this.sprite = new PIXI.Sprite(PIXI.Texture.fromImage('Cross_mc0000'));
-    this.sprite.scale.set(1.5, 1.5);
+    this.sprite = new PIXI.Sprite(PIXI.Texture.fromImage('cross1.png'));
+    //this.sprite.scale.set(0.7, 0.7);
     this.sprite.anchor.set(0, 0);
     this.addChild(this.sprite);
   }
