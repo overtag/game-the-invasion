@@ -23,10 +23,7 @@ export class ButtonText extends PIXI.Container {
 
     this.textField = new PIXI.Text(text, config.textFont);
     this.textField.anchor.set(0.5, 0.5);
-    this.textField.position.set(
-      this.sprite.width * 0.5,
-      this.sprite.height * 0.5,
-    );
+    this.textField.position.set(232, 60);
     this.addChild(this.textField);
 
     this.pointerdown = this.defaultClick.bind(this);

@@ -13,7 +13,7 @@ export class TrapScreen extends PIXI.Container {
     this.rakeTexture = PIXI.Texture.fromImage(`${types.rake}0000`);
     this.sheepTexture = PIXI.Texture.fromImage(`${types.sheep}0000`);
 
-    this.crossTexture = PIXI.Texture.fromImage('Cross_mc0000');
+    this.crossTexture = PIXI.Texture.fromImage('Cross');
     this.pumpkinTexture = PIXI.Texture.fromImage(`Pumpkin_mc0000`);
     this.stoneTexture = PIXI.Texture.fromImage(`${types.stone}0000`);
 

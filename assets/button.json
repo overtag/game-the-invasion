@@ -1,0 +1,19 @@
+﻿{"frames": {
+
+"button.png":
+{
+	"frame": {"x":3,"y":3,"w":422,"h":136},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":422,"h":136},
+	"sourceSize": {"w":422,"h":136}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "18.0.0.107",
+	"image": "button.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1"
+}
+}

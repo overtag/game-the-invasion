@@ -4,6 +4,17 @@ import { eventEmitter, EVENTS } from '../../events/EventEmitter';
 import { getTexture, types } from './types';
 import { HealthBar } from '../health/HealthBar';
 
+export function getTexture1(type, length) {
+  const listNames = [];
+  const textureArray = [];
+  for (let i = 0; i < length; i++) {
+    const textureName = `${type}${i < 10 ? '000' : '00'}${i}`;
+    textureArray.push(PIXI.Texture.from(textureName));
+  }
+
+  return textureArray;
+}
+
 export class EnemyBase extends PIXI.Container {
   constructor() {
     super();
@@ -21,9 +32,25 @@ export class EnemyBase extends PIXI.Container {
     this.spriteContainer = new PIXI.Container();
     // this.addChild(this.createRectangleButton());
     this.addChild(this.spriteContainer);
+    // deade_effect0010
+    this.dead_effect = new PIXI.extras.AnimatedSprite(
+      getTexture1('deade_effect', 10),
+    );
+    this.dead_effect.scale.set(0.9);
+    this.dead_effect.position.set(0, 0);
+
+    this.dead_effect.loop = false;
+    this.dead_effect.visible = false;
+    this.dead_effect.animationSpeed = 0.5;
+
+    this.spriteContainer.addChild(this.dead_effect);
+    this.dead_effect.onComplete = evt => {
+      eventEmitter.emit(EVENTS.ENEMY_DEATH, { enemy: this, gold: 5 });
+    };
   }
 
   initSprite() {
+    this.dead_effect.visible = false;
     this.textureArray = getTexture(this.type);
     this.sprite = new PIXI.extras.AnimatedSprite(this.textureArray);
     this.sprite.scale.set(0.9);
@@ -51,6 +78,7 @@ export class EnemyBase extends PIXI.Container {
     this.healthBar.y = -10 - this.healthBar.height;
     this.healthBar.x =
       this.spriteContainer.width * 0.5 - this.healthBar.width * 0.5;
+    this.sprite.visible = true;
   }
 
   damage(value) {
@@ -78,7 +106,10 @@ export class EnemyBase extends PIXI.Container {
   }
 
   remove() {
-    eventEmitter.emit(EVENTS.ENEMY_DEATH, { enemy: this, gold: 5 });
+    this.sprite.visible = false;
+    this.dead_effect.visible = true;
+
+    this.dead_effect.gotoAndPlay(0);
   }
 
   createRectangleButton() {

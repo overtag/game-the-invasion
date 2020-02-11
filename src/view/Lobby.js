@@ -7,7 +7,7 @@ export class Lobby extends PIXI.Container {
   constructor() {
     super();
 
-    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('cemetery2'));
+    const bg = new PIXI.Sprite(PIXI.Texture.fromImage('lobby'));
 
     this.addChild(bg);
 
@@ -16,7 +16,7 @@ export class Lobby extends PIXI.Container {
     this.btnNewGame = new ButtonText(texture, texture, texture, 'Play');
 
     this.btnNewGame.position.set(
-      config.defaultWidth * 0.5 - this.btnNewGame.width * 0.5,
+      config.defaultWidth * 0.5 - this.btnNewGame.width * 0.5 + 30,
       400,
     );
 
